@@ -21,6 +21,6 @@ document.addEventListener("click", function (e) {
   let name =e.target.parentNode.childNodes[3]
     let price=e.target.parentNode.childNodes[5]
    let image= e.target.parentNode.childNodes[1]
-   location.href=`whatsapp://send?text=name ${name.innerHTML} \n price ${price.innerHTML} \n image ${this.location.pathname=image.src}`
+   location.href=`whatsapp://wa.me/qr/CLQPR4DUZNG3G1/send?text=name ${name.innerHTML} \n price ${price.innerHTML} \n image ${this.location.pathname=image.src}`
   }
 });
