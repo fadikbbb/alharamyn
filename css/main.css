@@ -35,18 +35,11 @@ header .nav-top {
   justify-content: space-between;
 }
 
-.cho {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 section {
   direction: rtl;
 margin: 30px 0;}
 .titleOfList {
   width: 100%;
-
   font-size: 60px;
   margin-right: 40px;
   font-size: 72px;
@@ -186,6 +179,7 @@ header .menu {
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   overflow: scroll;
-  
 }
