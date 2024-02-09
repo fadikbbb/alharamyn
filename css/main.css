@@ -67,7 +67,7 @@ padding: 10px 40px;
 
   flex-direction: row-reverse;
 }
-.logo {
+.logo a i {
   margin: 20px;
   font-size: 60px;
   color: white;
