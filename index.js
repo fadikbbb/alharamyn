@@ -21,7 +21,9 @@ document.addEventListener("click", function (e) {
   let name =e.target.parentNode.childNodes[3]
     let price=e.target.parentNode.childNodes[5]
    let image= e.target.parentNode.childNodes[1]
-   location.href = `https://wa.me/message/Q4ZYXLJWD77IG1?text=name: ${name.innerHTML}%0Aprice: ${price.innerHTML}%0Aimage: ${encodeURIComponent(image.src)}`;
-
+  //  location.href = `https://wa.me/message/Q4ZYXLJWD77IG1?text=name: ${name.innerHTML}%0Aprice: ${price.innerHTML}%0Aimage: ${encodeURIComponent(image.src)}`;
+   const message = "Your custom message here";
+   const encodedMessage = encodeURIComponent(message);
+   location.href = `https://wa.me/message/Q4ZYXLJWD77IG1?text=${encodedMessage}`;
 }
 });
