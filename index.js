@@ -21,7 +21,7 @@ document.addEventListener("click", function (e) {
   let name =e.target.parentNode.childNodes[3]
     let price=e.target.parentNode.childNodes[5]
    let image= e.target.parentNode.childNodes[1]
-   let num ="+963932217620"
+   let num ="+96176795291"
    const message = `image: ${encodeURIComponent(image.src)}%0Aprice: ${price.innerHTML}%0Aname: ${name.innerHTML}`;
    window.location.href = `https://wa.me/${num}?text=${message}`;
   //  location.href = `WhatsApp://wa.me/message/Q4ZYXLJWD77IG1/send?text=name: ${name.innerHTML}%0Aprice: ${price.innerHTML}%0Aimage: ${encodeURIComponent(image.src)}`;
