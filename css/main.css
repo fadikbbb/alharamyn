@@ -179,7 +179,11 @@ header .menu {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   overflow: scroll;
+}
+.cho:nth-last-child(){
+  margin-right: 100px;
 }
