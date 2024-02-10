@@ -6,6 +6,7 @@
 :root {
   --color: #30196a;
   --background-color:#d3d5f0;
+  --head-color:#f1edf6;
 }
 html {
   scroll-behavior: smooth;
@@ -20,9 +21,9 @@ header {
   height: 150px;
   display: flex;
   align-items: center;
-  background-image:url(../image/IMG-20240118-WA0032-ai-brush-removebg-d26mifr.png);
- background-color: var(--background-color);
-background-position: center 0px;
+  background-image:url(../image/Denllo.jpg);
+ background-color: var(--head-color);
+background-position: center 30%;
   background-size: 500px 300px;
   background-repeat: no-repeat;
   border-radius: 20px;
@@ -38,15 +39,14 @@ background-position: center 0px;
 .logo a i {
   margin-left: 20px;
   font-size: 60px;
-  color: white;
+  color: var(--color);
 }
 .fa-bars,
 .fa-bars-staggered {
   font-size: 60px;
   z-index: 3;
   margin-right: 20px;
-  color: white;
-  /* transition: 3.3s linear; */
+  color: var(--color);
 }
 .nav {
   width: 0;
@@ -85,7 +85,8 @@ header .menu {
   text-decoration: none;
   font-size: 100px;
   padding: 15px 40px 10px 0;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  color: var(--color);
+  border-bottom: 1px solid var(--color);
 }
 
 section {
@@ -93,6 +94,7 @@ section {
 }
 .titleOfList {
   margin-right: 20px;
+  padding: 40px 0px 40px 0px;
   font-size: 70px;
   background-color: var(--color);
   -webkit-background-clip: text;
@@ -108,7 +110,7 @@ section {
   justify-content: space-between;
 }
 .show-all {
-  font-size: 30px;
+  font-size: 50px;
   text-decoration: none;
   margin-left: 20px;
   text-wrap: nowrap;
@@ -126,7 +128,7 @@ section {
 .content {
   border-radius: 20px;
   padding: 20px;
-  background-color: rgba(255, 249, 249, 0.671);
+  background-color: var(--head-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,7 +144,7 @@ section {
 
 .paragraph-content {
   text-align: center;
-  color: rgb(112, 112, 112);
+  color: rgb(88, 0, 0);
   font-size: 20px;
 }
 .accept {
@@ -156,4 +158,7 @@ section {
 .price {
   color: #ff6060;
   font-size: 30px;
+}
+.cho .content .title-content{
+  color: var(--color);
 }
