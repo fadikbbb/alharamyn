@@ -5,8 +5,8 @@
 }
 :root {
   --color: #30196a;
-  --background-color:#d3d5f0;
-  --head-color:#f1edf6;
+  --background-color: #d3d5f0;
+  --head-color: #f1edf6;
 }
 html {
   scroll-behavior: smooth;
@@ -21,9 +21,9 @@ header {
   height: 150px;
   display: flex;
   align-items: center;
-  background-image:url(../image/Denllo.jpg);
- background-color: var(--head-color);
-background-position: center 30%;
+  background-image: url(../image/Denllo.jpg);
+  background-color: var(--head-color);
+  background-position: center 30%;
   background-size: 500px 300px;
   background-repeat: no-repeat;
   border-radius: 20px;
@@ -80,7 +80,7 @@ header .menu {
   justify-content: space-around;
 }
 
-.menu a {
+.menu .menu-links {
   text-wrap: nowrap;
   text-decoration: none;
   font-size: 100px;
@@ -159,6 +159,88 @@ section {
   color: #ff6060;
   font-size: 30px;
 }
-.cho .content .title-content{
+.cho .content .title-content {
   color: var(--color);
+}
+.contact-title {
+  font-size: 60px;
+  color: var(--color);
+  text-align: center;
+}
+.media-title {
+  font-size: 40px;
+  text-align: center;
+  color: var(--color);
+}
+footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  justify-content: center;
+  align-items: start;
+  gap: 15px;
+}
+footer .social-media {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+  
+}
+footer .social-media .media-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+footer .social-media .media-icons li i {
+  font-size: 40px;
+  margin: 15px;
+  color: #5e4b8e;
+}
+footer .about-us {
+  padding-left: 0px;
+}
+footer .about-us p {
+  color: #5e4b8e;
+  text-align: center;
+
+}
+footer .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  padding-left: 0px;
+}
+footer .contact a {
+  font-size: 24px;
+  color: #5e4b8e;
+}
+footer .footer-content {
+  width: 100%;
+  display: grid;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-size: 40px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.all-list{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  
+}
+footer .footer-content li{
+  direction: rtl;
+  list-style:inside;
+}
+footer .footer-content .list-content {
+  text-decoration: none;
+  color: #5e4b8e;
+  font-size: 30px;
 }
