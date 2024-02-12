@@ -4,6 +4,7 @@
   color: rgb(0, 0, 0);
 }
 :root {
+  --color-icon:#ff008c;
   --color: #30196a;
   --background-color: #d3d5f0;
   --head-color: #f1edf6;
@@ -50,19 +51,34 @@ header {
   width: fit-content;
   display: flex;
   flex-wrap: nowrap;
-  flex-direction: row;
+  flex-direction: row;align-items: center;
 }
-.logo a i {
+.logo i {
   margin-left: 10px;
   font-size: 30px;
-  color: var(--color);
+  color: var(--color-icon);
 }
+
 .fa-bars,
 .fa-bars-staggered {
   font-size: 30px;
   z-index: 3;
   margin-right: 10px;
-  color: var(--color);
+  color:var(--color-icon);
+}form{
+  margin: 0;
+  position: relative;
+}
+.sreach{
+  left: 0;
+  top: 40px;
+  width: 200px;
+  height: 40px;
+  position: absolute;
+  font-size: 20px;
+  display: none;
+  align-items: center;
+  
 }
 .nav {
   width: 0;
@@ -176,7 +192,7 @@ section {
   font-size: 10px;
 }
 .accept {
-  background-color: #ff008c;
+  background-color: var(--color-icon);
   color: white;
   padding: 0px 20px 10px;
   border: none;
