@@ -24,6 +24,5 @@ document.addEventListener("click", function (e) {
    let num ="+96176795291"
    const message = `image: ${encodeURIComponent(image.src)}%0Aprice: ${price.innerHTML}%0Aname: ${name.innerHTML}`;
    window.location.href = `https://wa.me/${num}?text=${message}`;
-  //  location.href = `WhatsApp://wa.me/message/Q4ZYXLJWD77IG1/send?text=name: ${name.innerHTML}%0Aprice: ${price.innerHTML}%0Aimage: ${encodeURIComponent(image.src)}`;
 }
 });

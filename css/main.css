@@ -10,42 +10,58 @@
 }
 html {
   scroll-behavior: smooth;
+}
+body {
   background-color: var(--background-color);
 }
+i,
+a,
+button,
+.content {
+  cursor: pointer;
+}
 header {
-  height: 180px;
+  height: 80px;
+  position: relative;
 }
 .space {
   position: fixed;
+  height: 80px;
   width: 100%;
-  height: 150px;
   display: flex;
+  justify-content: center;
   align-items: center;
   background-image: url(../image/Denllo.jpg);
   background-color: var(--head-color);
-  background-position: center 30%;
-  background-size: 500px 300px;
+  background-position: center -30px;
+  background-size: 200px;
   background-repeat: no-repeat;
   border-radius: 20px;
 }
+
 .top-nav {
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .logo {
   margin: 0;
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 .logo a i {
-  margin-left: 20px;
-  font-size: 60px;
+  margin-left: 10px;
+  font-size: 30px;
   color: var(--color);
 }
 .fa-bars,
 .fa-bars-staggered {
-  font-size: 60px;
+  font-size: 30px;
   z-index: 3;
-  margin-right: 20px;
+  margin-right: 10px;
   color: var(--color);
 }
 .nav {
@@ -79,29 +95,40 @@ header .menu {
   flex-direction: column;
   justify-content: space-around;
 }
-
+@media screen and (max-width: 300px) {
+  .space {
+    background-image: none;
+  }
+  .active {
+    width: 180px;
+  }
+}
 .menu .menu-links {
   text-wrap: nowrap;
   text-decoration: none;
-  font-size: 100px;
-  padding: 15px 40px 10px 0;
+  font-size: 30px;
+  padding: 10px;
   color: var(--color);
   border-bottom: 1px solid var(--color);
 }
-
 section {
-  margin: 40px 0;
+  margin: 10px 0;
 }
-.titleOfList {
+.titleOfList,
+.offer-title {
   margin-right: 20px;
-  padding: 40px 0px 40px 0px;
-  font-size: 70px;
+  padding: 10px 0px 10px 0px;
+  font-size: 30px;
   background-color: var(--color);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -ms-background-clip: text;
   -o-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.offer-title {
+  width: 100%;
+  text-align: end;
 }
 .change-page {
   display: flex;
@@ -110,16 +137,17 @@ section {
   justify-content: space-between;
 }
 .show-all {
-  font-size: 50px;
+  font-size: 20px;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 10px;
   text-wrap: nowrap;
   border-radius: 40px;
   border: 1px solid var(--color);
-  padding: 10px 40px;
+  padding: 5px 20px;
   color: var(--color);
 }
 .cho {
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -127,55 +155,58 @@ section {
 }
 .content {
   border-radius: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: var(--head-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  margin: 20px 30px 0;
+  width: 200px;
+  margin: 10px 10px 0;
 }
 .image-content {
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
   border-radius: 20px;
 }
 
 .paragraph-content {
   text-align: center;
   color: rgb(88, 0, 0);
-  font-size: 20px;
+  font-size: 10px;
 }
 .accept {
   background-color: #ff008c;
   color: white;
-  padding: 0px 40px 10px;
+  padding: 0px 20px 10px;
   border: none;
-  font-size: 40px;
+  font-size: 20px;
   border-radius: 20px;
 }
 .price {
   color: #ff6060;
-  font-size: 30px;
+  font-size: 15px;
 }
 .cho .content .title-content {
   color: var(--color);
-}
-.contact-title {
-  font-size: 60px;
-  color: var(--color);
+  font-size: 20px;
   text-align: center;
 }
-.media-title {
+.contact-title {
   font-size: 40px;
   text-align: center;
   color: var(--color);
 }
+.media-title {
+  font-size: 24px;
+  text-align: center;
+  color: var(--color);
+  margin-bottom: 10px;
+}
 footer {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: start;
   gap: 15px;
@@ -184,7 +215,6 @@ footer .social-media {
   display: flex;
   flex-direction: column;
   padding-left: 0px;
-  
 }
 footer .social-media .media-icons {
   display: flex;
@@ -192,9 +222,9 @@ footer .social-media .media-icons {
   align-items: center;
   justify-content: center;
 }
-footer .social-media .media-icons li i {
-  font-size: 40px;
-  margin: 15px;
+footer .social-media .media-icons a i {
+  font-size: 30px;
+  margin: 10px;
   color: #5e4b8e;
 }
 footer .about-us {
@@ -203,7 +233,7 @@ footer .about-us {
 footer .about-us p {
   color: #5e4b8e;
   text-align: center;
-
+  font-size: 15px;
 }
 footer .contact {
   display: flex;
@@ -213,34 +243,32 @@ footer .contact {
   padding-left: 0px;
 }
 footer .contact a {
-  font-size: 24px;
+  font-size: 15px;
   color: #5e4b8e;
 }
 footer .footer-content {
   width: 100%;
-  display: grid;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  font-size: 40px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 20px;
   text-align: center;
   align-items: center;
   padding-left: 0px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
 }
-.all-list{
+
+.all-list {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+
+  flex-wrap: wrap;
   align-items: flex-end;
-  
-}
-footer .footer-content li{
-  direction: rtl;
-  list-style:inside;
+  justify-content: space-around;
 }
 footer .footer-content .list-content {
   text-decoration: none;
   color: #5e4b8e;
-  font-size: 30px;
+  font-size: 15px;
 }
