@@ -4,7 +4,6 @@ let menu = document.querySelector(".menu");
 let accept = document.querySelectorAll(".accept");
 let all = document.querySelectorAll("section");
 let linksOfNav = document.querySelectorAll(".menu a");
-let container = document.querySelector(".container");
 bar.onclick = function () {
   nav.classList.toggle("active");
 
@@ -28,12 +27,37 @@ document.addEventListener("click", function (e) {
     window.location.href = `https://wa.me/${num}?text=${message}`;
   }
 });
+
+let val1;
 let sreachIcon = document.querySelector("#sreach-icon");
 let searchInput = document.querySelector(".sreach");
-let nameContents = document.querySelector(".title-content");
-// console.log(sreachIcon);
-// console.log(sreachInput);
-
+let content = document.querySelectorAll(".content");
+let nameContents = document.querySelectorAll(".title-content");
+let obj = document.querySelector(".object");
+let contentClone;
+searchInput.addEventListener("input", function () {
+  val1 = searchInput.value.toUpperCase();
+});
+console.log(content[0].childNodes[3]);
+function search() {
+  obj.innerHTML = "";
+  for (let i = 0; i < nameContents.length; i++) {
+    contentClone = content[i].cloneNode(true);
+    console.log(contentClone.childNodes)
+    contentClone.childNodes[7].style.cssText = `display:none`;
+    contentClone.childNodes[5].style.cssText = `font-size:10px`;
+    contentClone.childNodes[3].style.cssText = `font-size:20px`;
+    contentClone.childNodes[1].style.cssText = `width:30px;
+    height:30px`;
+    contentClone.style.cssText = `display:flex;
+    flex-direction: row-reverse;`;
+    if (nameContents[i].innerHTML.toUpperCase().indexOf(val1) >= 0) {
+      console.log("test");
+      obj.append(contentClone);
+    } else {
+    }
+  }
+}
 sreachIcon.addEventListener("click", function () {
   if (this.classList.contains("resreach")) {
     searchInput.style.cssText = `display:flex;
@@ -44,4 +68,5 @@ sreachIcon.addEventListener("click", function () {
     `;
     this.classList.add("resreach");
   }
+  let allContent = document.querySelectorAll(".content");
 });
