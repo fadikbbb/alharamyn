@@ -1,3 +1,4 @@
+//whatsapp and side bar
 let bar = document.querySelector("#menu-bar");
 let nav = document.querySelector(".nav");
 let menu = document.querySelector(".menu");
@@ -8,14 +9,12 @@ bar.onclick = function () {
   nav.classList.toggle("active");
 
   if (nav.classList.contains("active")) {
-    bar.classList.replace("fa-bars", "fa-bars-staggered");
+    bar.classList.replace("fa-bars", "fa-x");
   } else {
-    bar.classList.replace("fa-bars-staggered", "fa-bars");
+    bar.classList.replace("fa-x", "fa-bars");
   }
 };
 document.addEventListener("click", function (e) {
-  // console.log(e.target);
-  // console.log(e.target.classList.contains("accept"));
   if (e.target.classList.contains("accept")) {
     let name = e.target.parentNode.childNodes[3];
     let price = e.target.parentNode.childNodes[5];
@@ -27,46 +26,89 @@ document.addEventListener("click", function (e) {
     window.location.href = `https://wa.me/${num}?text=${message}`;
   }
 });
-
+//search
 let val1;
-let sreachIcon = document.querySelector("#sreach-icon");
-let searchInput = document.querySelector(".sreach");
+let searchIcon = document.querySelector("#search-icon");
+let searchInput = document.querySelector(".search");
 let content = document.querySelectorAll(".content");
 let nameContents = document.querySelectorAll(".title-content");
 let obj = document.querySelector(".object");
+let searchSign = document.querySelector(".fa-caret-down");
 let contentClone;
 searchInput.addEventListener("input", function () {
   val1 = searchInput.value.toUpperCase();
 });
-console.log(content[0].childNodes[3]);
 function search() {
   obj.innerHTML = "";
   for (let i = 0; i < nameContents.length; i++) {
     contentClone = content[i].cloneNode(true);
-    console.log(contentClone.childNodes)
-    contentClone.childNodes[7].style.cssText = `display:none`;
-    contentClone.childNodes[5].style.cssText = `font-size:10px`;
-    contentClone.childNodes[3].style.cssText = `font-size:20px`;
     contentClone.childNodes[1].style.cssText = `width:30px;
-    height:30px`;
-    contentClone.style.cssText = `display:flex;
-    flex-direction: row-reverse;`;
+                                                height:30px;`;
+    contentClone.childNodes[3].style.cssText = `font-size: 10px`;
+    contentClone.childNodes[5].style.cssText = `display: flex;
+                                                font-size: 10px; 
+                                                flex-direction: column;
+                                                `;
+    contentClone.childNodes[7].style.cssText = `display: none`;
+    contentClone.childNodes[9].style.cssText = `display: none`;
+    contentClone.style.cssText = `display:flex; 
+                                  flex-direction: row;
+                                  justify-content: space-between;
+                                  background-color: gold;
+                                  margin-left: 10px;
+                                  margin-right: 10px;
+                                  margin-top: 0px;
+                                  `;
+
     if (nameContents[i].innerHTML.toUpperCase().indexOf(val1) >= 0) {
-      console.log("test");
       obj.append(contentClone);
     } else {
+      contentClone.style.cssText = `display: none;`;
     }
   }
 }
-sreachIcon.addEventListener("click", function () {
-  if (this.classList.contains("resreach")) {
-    searchInput.style.cssText = `display:flex;
+
+searchIcon.addEventListener("click", function () {
+  if (this.classList.contains("research")) {
+    searchInput.style.cssText = `
+    display:flex;
     `;
-    this.classList.remove("resreach");
+    searchSign.style.cssText = `
+    display: block;`;
+    obj.style.cssText = `
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    height: 170px;
+    text-align: center;
+     outline: 1px solid black;`;
+    this.classList.remove("research");
   } else {
-    searchInput.style.cssText = `display:none;
-    `;
-    this.classList.add("resreach");
+    searchSign.style.cssText = `
+    display: none;`;
+    searchInput.style.cssText = `
+    display:none;`;
+    obj.style.cssText = `
+    display:none;`;
+    obj.style.cssText = `
+    height: 0px;`;
+    this.classList.add("research");
   }
-  let allContent = document.querySelectorAll(".content");
+});
+document.addEventListener("click", function (e) {
+  if (
+    e.target.classList.contains("image-content") ||
+    e.target.classList.contains("paragraph-content") ||
+    e.target.classList.contains("content") ||
+    e.target.classList.contains("title-content") ||
+    e.target.classList.contains("price")
+  ) {
+    console.log(e.target);
+    console.log("test");
+    let ele = document.createElement("div");
+    ele.className = "ele";
+    ele.innerHTML = "hi";
+    let newPage = window.open("", "_blank");
+    newPage.document.body.appendChild(ele);
+  }
 });

@@ -57,7 +57,7 @@ header {
   color: var(--color);
 }
 .fa-bars,
-.fa-bars-staggered {
+.fa-x{
   font-size: 40px;
   z-index: 3;
   margin-right: 20px;
@@ -261,7 +261,7 @@ footer .footer-content {
   margin-bottom: 15px;
 }
 
-.all-list {
+footer .all-list {
   width: 100%;
   display: flex;
 
