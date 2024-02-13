@@ -430,7 +430,7 @@ footer .footer-content .list-content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
     align-content: space-around;
     margin: 20px;
   }
@@ -456,6 +456,7 @@ footer .footer-content .list-content {
     padding-left: 0px;
     width: 100%;
     align-items: center;
+    z-index: -1;
   }
   .information .social-media .media-icons {
     display: flex;
@@ -464,6 +465,26 @@ footer .footer-content .list-content {
     justify-content: center;
     width: 100%;
   }
+  .information .social-media .media-icons a::before {
+    content: "";
+    transition: 0.3s linear;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid var(--color-icon);
+  }
+  .information .social-media .media-icons a:hover i {
+    color: white;
+  }
+
+  .information .social-media .media-icons a:hover::before {
+    border: 2px solid white;
+    background-color: var(--color-icon);
+  }
   .information .about-us {
     display: flex;
     flex-direction: column;
@@ -471,8 +492,9 @@ footer .footer-content .list-content {
     align-items: center;
     padding-left: 0px;
     position: relative;
+
     width: 100%;
-    z-index: -3;
+    z-index: -1;
   }
   .information .about-us p {
     color: var(--color-text);
@@ -487,11 +509,12 @@ footer .footer-content .list-content {
     width: 100%;
     padding-left: 0px;
     position: relative;
+    z-index: -1;
   }
   .information .contact .email a {
     position: relative;
     font-size: 15px;
     color: var(--color-text);
-    z-index: -2;
+    z-index: -1;
   }
 }
