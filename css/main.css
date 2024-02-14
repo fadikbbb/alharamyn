@@ -5,16 +5,17 @@
 }
 
 :root {
-  --productPriceColor: #e63946; /* Red for coffee */
-  --productParagrapghColor: #457b9d; /* Blue for chocolate */
-  --productTitleColor: #f4a261; /* Orange for nuts */
-  --head-color: #2a9d8f; /* Turquoise for citrus */
-  --color-icon: #f4a261; /* Orange for warmth */
-  --color-text: #1d3557; /* Navy blue for freshness */
-  --paragraphColor: #696969; /* Dim gray for depth */
-  --background-color: #f9c74f; /* Yellow for warmth and brightness */
-  --nav-color: #e63946; /* Red for softness */
-  --heading-color: #2a9d8f; /* Turquoise for a natural feel */
+  --productPriceColor: #e63946;
+  --productParagrapghColor: #457b9d;
+  --productTitleColor: #f4a261;
+  --head-color: #2a9d8f;
+  --color-icon: #f4a261;
+  --color-text: #1d3557;
+  --paragraphColor: #696969;
+  --background-color: #f9c74f;
+  --nav-color: #e63946;
+  --heading-color: #2a9d8f;
+  --hover-color: white;
 }
 
 body {
@@ -70,7 +71,9 @@ header {
   font-size: 30px;
   color: var(--color-icon);
 }
-
+.logo i:hover {
+  color: var(--hover-color);
+}
 .fa-bars,
 .fa-x {
   font-size: 30px;
@@ -78,9 +81,15 @@ header {
   margin-right: 10px;
   color: var(--color-icon);
 }
+.fa-bars:hover {
+  color: var(--hover-color);
+}
 .fa-x {
   color: var(--color-icon);
   font-size: 25px;
+}
+.fa-x:hover {
+  color: var(--hover-color);
 }
 form {
   margin: 0;
@@ -104,7 +113,7 @@ form .fa-caret-down {
   display: none;
   content: "";
   position: absolute;
-  top: 20px;
+  top: 22px;
   right: 9px;
   font-size: 25px;
 }
@@ -172,8 +181,8 @@ header .menu {
 }
 .menu .menu-links:hover {
   transition: 0.5s;
-  color: white;
-  border-bottom: 1px solid white;
+  color: var(--hover-color);
+  border-bottom: 1px solid var(--hover-color);
 }
 section {
   margin: 10px 0;
@@ -209,6 +218,11 @@ section {
   border: 1px solid var(--heading-color);
   padding: 5px 20px;
   color: var(--heading-color);
+}
+.show-all:hover {
+  border: 1px solid var(--hover-color);
+  color: var(--hover-color);
+  background-color: var(--productParagrapghColor);
 }
 .cho {
   width: 100%;
@@ -246,6 +260,10 @@ section {
   border: none;
   font-size: 20px;
   border-radius: 20px;
+}
+.accept:hover {
+  color: var(--hover-color);
+  background-color: var(--productParagrapghColor);
 }
 .price {
   color: var(--productPriceColor);
@@ -354,11 +372,11 @@ section {
   border: 1px solid var(--color-icon);
 }
 .information .social-media .media-icons a:hover i {
-  color: white;
+  color: var(--hover-color);
 }
 
 .information .social-media .media-icons a:hover::before {
-  border: 2px solid white;
+  border: 2px solid var(--hover-color);
   background-color: var(--color-icon);
 }
 
@@ -447,7 +465,7 @@ footer .footer-content .all-list .list-content {
   transition: 0.4s;
 }
 footer .footer-content .all-list li:hover .list-content {
-  color: white;
+  color: var(--hover-color);
   transition: 0.3s;
 }
 
@@ -503,11 +521,11 @@ footer .footer-content .all-list li:hover .list-content {
     border: 1px solid var(--color-icon);
   }
   .information .social-media .media-icons a:hover i {
-    color: white;
+    color: var(--hover-color);
   }
 
   .information .social-media .media-icons a:hover::before {
-    border: 2px solid white;
+    border: 2px solid var(--hover-color);
     background-color: var(--color-icon);
   }
   .information .about-us {
