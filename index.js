@@ -46,12 +46,12 @@ function search() {
                                                 height:30px;`;
     contentClone.childNodes[3].style.cssText = `font-size: 10px`;
     contentClone.childNodes[5].style.cssText = `display: flex;
-                                                font-size: 10px; 
+                                                font-size: 10px;
                                                 flex-direction: column;
                                                 `;
     contentClone.childNodes[7].style.cssText = `display: none`;
     contentClone.childNodes[9].style.cssText = `display: none`;
-    contentClone.style.cssText = `display:flex; 
+    contentClone.style.cssText = `display:flex;
                                   flex-direction: row;
                                   justify-content: space-between;
                                   background-color: gold;
@@ -103,12 +103,30 @@ document.addEventListener("click", function (e) {
     e.target.classList.contains("title-content") ||
     e.target.classList.contains("price")
   ) {
-    console.log(e.target);
-    console.log("test");
-    let ele = document.createElement("div");
-    ele.className = "ele";
-    ele.innerHTML = "hi";
-    let newPage = window.open("", "_blank");
-    newPage.document.body.appendChild(ele);
+    let ele1 = document.createElement("img");
+    ele1.className = "ele-img";
+    let ele2 = document.createElement("div");
+    ele2.className = "ele-title";
+    let ele3 = document.createElement("div");
+    ele2.className = "ele-price";
+    let  targetName;
+
+    if (e.target.classList.contains("content")) {
+      console.log(e.target.childNodes);
+      ele1.src = e.target.childNodes[1].src;
+      ele2.innerHTML = e.target.childNodes[3].innerHTML;
+      ele3.innerHTML = e.target.childNodes[5].innerHTML;
+      targetName = e.target.childNodes[3].innerHTML;
+    } else {
+      ele1.src = e.target.parentNode.childNodes[1].src;
+      ele2.innerHTML = e.target.parentNode.childNodes[3].innerHTML;
+      ele3.innerHTML = e.target.parentNode.childNodes[5].innerHTML;
+      targetName = e.target.parentNode.childNodes[3].innerHTML;
+    }
+    window.open(`/element.html?name=product ${targetName}`, "_self");
+    localStorage.setItem("ele1", ele1.src);
+    localStorage.setItem("ele2", ele2.innerHTML);
+    localStorage.setItem("ele3", ele3.innerHTML);
   }
 });
+// localStorage.clear()
