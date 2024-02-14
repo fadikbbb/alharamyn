@@ -123,7 +123,7 @@ document.addEventListener("click", function (e) {
       ele3.innerHTML = e.target.parentNode.childNodes[5].innerHTML;
       targetName = e.target.parentNode.childNodes[3].innerHTML;
     }
-    location.href = `index1.html?name=products ${targetName}`;
+    location.href = `index1.html?name=product-${targetName}`;
     localStorage.setItem("ele1", ele1.src);
     localStorage.setItem("ele2", ele2.innerHTML);
     localStorage.setItem("ele3", ele3.innerHTML);
