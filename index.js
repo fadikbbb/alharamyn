@@ -108,7 +108,7 @@ document.addEventListener("click", function (e) {
     let ele2 = document.createElement("div");
     ele2.className = "ele-title";
     let ele3 = document.createElement("div");
-    ele2.className = "ele-price";
+    ele3.className = "ele-price";
     let  targetName;
 
     if (e.target.classList.contains("content")) {
@@ -123,7 +123,7 @@ document.addEventListener("click", function (e) {
       ele3.innerHTML = e.target.parentNode.childNodes[5].innerHTML;
       targetName = e.target.parentNode.childNodes[3].innerHTML;
     }
-   location.href=`index1.html?name=product ${targetName}`, "_self";
+    location.href = `index1.html?name=products ${targetName}`;
     localStorage.setItem("ele1", ele1.src);
     localStorage.setItem("ele2", ele2.innerHTML);
     localStorage.setItem("ele3", ele3.innerHTML);
