@@ -3,19 +3,17 @@
   list-style: none;
   color: rgb(0, 0, 0);
 }
-
 :root {
-  --productPriceColor: #e63946;
-  --productParagrapghColor: #457b9d;
-  --productTitleColor: #f4a261;
-  --head-color: #2a9d8f;
-  --color-icon: #f4a261;
-  --color-text: #1d3557;
-  --paragraphColor: #696969;
-  --background-color: #f9c74f;
-  --nav-color: #e63946;
-  --heading-color: #2a9d8f;
-  --hover-color: white;
+  --productPriceColor: #0b0b0b; /* Dark gray */
+  --productParagraphColor: #395f68; /* Gray */
+  --productTitleColor: #010101; /* Navy blue */
+  --head-color: #ffffff; /* Navy blue */
+  --color-icon: #a86500; /* Black */
+  --color-text: #7c4a00; /* Dark gray */
+  --paragraphColor: #b15000; /* Dark gray */
+  --background-color: #F4F1EB; /* Light gray */
+  --nav-color: #222365; /* Navy blue */
+  --hover-color: #ff7300; /* Light gray */
 }
 
 body {
