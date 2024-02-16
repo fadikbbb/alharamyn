@@ -5,18 +5,18 @@
 }
 
 :root {
-  --productPriceColor: #e63946;
-  --productParagrapghColor: #457b9d;
-  --productTitleColor: #f4a261;
-  --head-color: #2a9d8f;
-  --color-icon: #f4a261;
-  --color-text: #1d3557;
-  --paragraphColor: #696969;
-  --background-color: #f9c74f;
-  --nav-color: #e63946;
-  --heading-color: #2a9d8f;
-  --hover-color: white;
+  --productPriceColor: #0b0b0b; /* Dark gray */
+  --productParagraphColor: #395f68; /* Gray */
+  --productTitleColor: #010101; /* Navy blue */
+  --head-color: #ffffff; /* Navy blue */
+  --color-icon: #a86500; /* Black */
+  --color-text: #7c4a00; /* Dark gray */
+  --paragraphColor: #b15000; /* Dark gray */
+  --background-color: #F4F1EB; /* Light gray */
+  --nav-color: #222365; /* Navy blue */
+  --hover-color: #ff7300; /* Light gray */
 }
+
 
 body {
   background-color: var(--background-color);
@@ -45,7 +45,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../image/Denllo.jpg);
+  background-image: url(../image/الحرامين.png);
   background-color: var(--head-color);
   background-position: center -30px;
   background-size: 200px;
@@ -117,6 +117,7 @@ form .fa-caret-down {
   right: 9px;
   font-size: 25px;
 }
+
 .object {
   position: absolute;
   left: 43.8px;
@@ -145,7 +146,7 @@ form .fa-caret-down {
   background: radial-gradient(
     circle,
     #fcfcff 0%,
-    rgba(255, 214, 214, 0.5) 100%
+   var(--background-color )
   );
   backdrop-filter: blur(12px);
   padding: 0;
@@ -192,7 +193,7 @@ section {
   margin-right: 20px;
   padding: 10px 0px 10px 0px;
   font-size: 30px;
-  background-color: var(--heading-color);
+  background-color: var(--color-text);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -ms-background-clip: text;
@@ -215,9 +216,9 @@ section {
   margin-left: 10px;
   text-wrap: nowrap;
   border-radius: 40px;
-  border: 1px solid var(--heading-color);
+  border: 1px solid var(--color-text);
   padding: 5px 20px;
-  color: var(--heading-color);
+  color: var(--color-text);
 }
 .show-all:hover {
   border: 1px solid var(--hover-color);
@@ -240,7 +241,12 @@ section {
   justify-content: center;
   align-items: center;
   width: 200px;
-  margin: 10px 10px 0;
+  margin: 10px 10px 0 ;
+
+  transition: 0.3s linear;
+}
+.content:hover {
+  box-shadow: 0 0 10px 1px gray;
 }
 .image-content {
   width: 200px;
@@ -250,7 +256,7 @@ section {
 
 .paragraph-content {
   text-align: center;
-  color: var(--paragraphColor);
+  color: var(--productParagrapghColor);
   font-size: 10px;
 }
 .accept {
@@ -263,7 +269,7 @@ section {
 }
 .accept:hover {
   color: var(--hover-color);
-  background-color: var(--productParagrapghColor);
+  background-color: var(--background-color);
 }
 .price {
   color: var(--productPriceColor);
@@ -277,14 +283,14 @@ section {
 .contact-title {
   font-size: 40px;
   text-align: center;
-  color: var(--heading-color);
+  color: var(--color-text);
   margin: 10px;
   padding: 10px;
 }
 .media-title {
   font-size: 24px;
   text-align: center;
-  color: var(--heading-color);
+  color: var(--color-text);
   margin-bottom: 10px;
 }
 
@@ -343,12 +349,14 @@ section {
   display: flex;
   flex-direction: row;
   align-items: center;
+ 
 }
 .information .social-media .media-icons a {
   width: 30px;
   height: 30px;
   padding: 5px;
   position: relative;
+  
 }
 .information .social-media .media-icons a i {
   transition: 0.3s linear;
@@ -357,7 +365,7 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--color-icon);
+  color: var(--paragraphColor);
 }
 .information .social-media .media-icons a::before {
   content: "";
@@ -369,7 +377,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1px solid var(--color-icon);
+  border: 1px solid var(--paragraphColor);;
 }
 .information .social-media .media-icons a:hover i {
   color: var(--hover-color);
@@ -382,7 +390,7 @@ section {
 
 .information .about-us .contact-paragraph {
   margin: 0px;
-  color: var(--color-text);
+  color: var(--paragraphColor);
   text-align: center;
   font-size: 15px;
 }
@@ -390,7 +398,7 @@ section {
 .information .contact .email a {
   position: relative;
   font-size: 15px;
-  color: var(--color-text);
+  color: var(--paragraphColor);
 }
 
 footer {
@@ -420,7 +428,7 @@ footer .footer-content .cont-title .media-title {
   align-items: center;
   width: fit-content;
   position: relative;
-  color: var(--background-color);
+  color: var(--color-text);
 }
 
 footer .footer-content .cont-title .media-title::before {
@@ -460,7 +468,7 @@ footer .footer-content .all-list .list-content {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: var(--nav-color);
+  color: var(--paragraphColor);
   font-size: 16px;
   transition: 0.4s;
 }
@@ -518,7 +526,7 @@ footer .footer-content .all-list li:hover .list-content {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 1px solid var(--color-icon);
+    border: 1px solid var(--paragraphColor);
   }
   .information .social-media .media-icons a:hover i {
     color: var(--hover-color);
@@ -556,4 +564,7 @@ footer .footer-content .all-list li:hover .list-content {
     font-size: 15px;
     color: var(--color-text);
   }
+}
+.content-c{
+  margin-bottom: 10px;
 }

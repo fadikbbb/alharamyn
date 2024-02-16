@@ -17,10 +17,21 @@
       <div class="space">
         <div class="top-nav">
           <h1 class="logo">
-            <a href="index.html"> <i class="fa-solid fa-home"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=+96176795291&text=Hi">
-              <i class="fa-brands fa-whatsapp"></i
-            ></a>
+            <a href="#"><i class="fa-solid fa-home"></i></a>
+            <form action="#" method="get">
+              <i
+                id="search-icon"
+                class="research fa-solid fa-magnifying-glass"
+              ></i>
+              <input
+                type="search"
+                onkeyup="search()"
+                placeholder="search..."
+                class="search"
+              />
+              <i class="fa-solid fa-caret-down"></i>
+            </form>
+            <div class="object"></div>
           </h1>
           <ul class="nav">
             <nav class="menu">
@@ -30,19 +41,17 @@
               <a class="menu-links" href="شوكولا.html">شوكولا</a>
               <a class="menu-links" href="مكسرات.html">مكسرات</a>
               <a class="menu-links" href="بزورات.html">بزورات</a>
-              <a class="menu-links" href="#" style="color: lightblue">
-                منتجات دنيلو</a
-              >
+              <a class="menu-links" href="#">منتجات دنيلو</a>
             </nav>
           </ul>
           <i id="menu-bar" class="fa-solid fa-bars"></i>
         </div>
       </div>
     </header>
-    <section>
+      <section>
       <div class="change-page">
         <div class="titleOfList">
-          <a href="index.html" class="titleOfList"> صفحة رئيسية> </a> منتجات دنيلو >
+          <a href="index.html" class="titleOfList"> صفحة رئيسية> </a> منتجات دنيلو 
         </div>
       </div>
       <div class="cho">
@@ -100,42 +109,58 @@
         </div>
       </div>
     </section>
-    <div class="contact-title">contact</div>
-    <footer>
+    <p class="contact-title">للتواصل</p>
+
+    <div class="information">
       <ul class="social-media">
-        <div class="media-title">media</div>
+        <p class="media-title">تواصل معنا</p>
         <div class="media-icons">
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-tiktok"></i></a>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
         </div>
       </ul>
-      <ul class="about-us">
-        <div class="media-title">about</div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-          dolorem omnis dolorum quasi suscipit error at eum voluptas quos
-          doloribus animi ipsa commodi odit, qui fugiat et. Dolorum, est
-          dolorem?
-        </p>
-      </ul>
       <ul class="contact">
-        <div class="media-title">feedback</div>
-        <a href="mailto:fadikbb2004@gmail.com">product feedback</a>
-      </ul>
-      <ul class="footer-content">
-        <div class="media-title">Catogery</div>
-        <div class="all-list">
-          <li><a class="list-content" href="راحة.html">راحة -</a></li>
-          <li><a class="list-content" href="بزورات.html">بزورات -</a></li>
-          <li><a class="list-content" href="بسكوت.html">بسكوت -</a></li>
-          <li><a class="list-content" href="شوكولا.html">شوكولا -</a></li>
-          <li><a class="list-content" href="مكسرات.html">مكسرات -</a></li>
-          <li>
-            <a class="list-content" href="منتجات_دنيلو.html">منتجات دنيلو -</a>
-          </li>
+        <p class="media-title">مراجعاتك</p>
+        <div class="email">
+          <a href="mailto:fadikbb2004@gmail.com">gmail</a>
         </div>
       </ul>
+      <ul class="about-us">
+        <p class="media-title">من نحن</p>
+        <p class="contact-paragraph">
+          نحنا افخم واقوى محمصة بشرق الاوسط معروف بالسمعة الطيبة وصلنا فاتحين
+          لاكتر من عشرين سنة
+        </p>
+      </ul>
+    </div>
+    <footer>
+      <div class="footer-content">
+        <div class="cont-title">
+          <div class="media-title">أقسام</div>
+        </div>
+        <ul class="all-list">
+          <li>
+            <a class="list-content" href="راحة.html">راحة</a>
+          </li>
+          <li>
+            <a class="list-content" href="بزورات.html">بزورات</a>
+          </li>
+          <li>
+            <a class="list-content" href="بسكوت.html">بسكوت</a>
+          </li>
+          <li>
+            <a class="list-content" href="شوكولا.html">شوكولا</a>
+          </li>
+          <li>
+            <a class="list-content" href="مكسرات.html">مكسرات</a>
+          </li>
+          <li>
+            <a class="list-content" href="#">منتجات دنيلو</a>
+          </li>
+        </ul>
+      </div>
     </footer>
     <script src="index.js"></script>
   </body>
