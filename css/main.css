@@ -255,6 +255,7 @@ section {
 }
 
 .paragraph-content {
+  display: none;
   text-align: center;
   color: var(--productParagrapghColor);
   font-size: 10px;
@@ -273,7 +274,8 @@ section {
 }
 .price {
   color: var(--productPriceColor);
-  font-size: 15px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 .cho .content .title-content {
   color: var(--productTitleColor);

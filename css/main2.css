@@ -11,9 +11,14 @@
   --color-icon: #a86500; /* Black */
   --color-text: #7c4a00; /* Dark gray */
   --paragraphColor: #b15000; /* Dark gray */
-  --background-color: #F4F1EB; /* Light gray */
+  --background-color: #f4f1eb; /* Light gray */
   --nav-color: #222365; /* Navy blue */
   --hover-color: #ff7300; /* Light gray */
+  --black: #000;
+  --white: #fff;
+  --gray: #ccc;
+  --smoke: #e2e2e2;
+  --disable: #f2f2f2;
 }
 
 body {
@@ -43,7 +48,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../image/Denllo.jpg);
+  background-image: url(../image/الحرامين.png);
   background-color: var(--head-color);
   background-position: center -30px;
   background-size: 200px;
@@ -106,6 +111,10 @@ form {
   border: 1px solid var(--color-icon);
   align-items: center;
   outline: none;
+}
+.img-detials{
+  direction: rtl;
+text-align: start;
 }
 form .fa-caret-down {
   display: none;
@@ -204,7 +213,7 @@ section .product {
   flex-direction: row-reverse;
   justify-content: space-between;
   width: 100%;
-  background-color: var(--color-text);
+  background-color: var(--background-color);
 }
 
 section .product .img {
@@ -223,15 +232,14 @@ section .product .img .image-container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  height: 100%;
+  width:275px;
+  height:450px;
   margin: 20px 10px 0px;
 }
 
 section .product .img .image-container img {
   border-radius: 20px;
   width: 100%;
-  height: 500px;
   cursor: pointer;
 }
 
@@ -262,14 +270,13 @@ section .img-detials {
 section .img-detials .product-title {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   width: 100%;
-  height: 50%;
+  direction: rtl;
 }
 section .img-detials .ele-price-quantity {
+  direction: rtl;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   height: 50%;
@@ -283,17 +290,24 @@ section .img-detials .ele-price-quantity .accept {
 .contact-title {
   font-size: 40px;
   text-align: center;
-  color: var(--heading-color);
+  color: var(--color-text);
   margin: 10px;
   padding: 10px;
 }
 .media-title {
   font-size: 24px;
   text-align: center;
-  color: var(--heading-color);
+  color: var(--color-text);
   margin-bottom: 10px;
 }
-
+.ele-paragraph{
+  font-size: 30px;
+}
+.quantity .title-quantity{
+  direction: ltr;
+  text-align: end;
+  margin: 10px 0px;
+}
 .information {
   display: flex;
   flex-direction: row;
@@ -363,7 +377,7 @@ section .img-detials .ele-price-quantity .accept {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--color-icon);
+  color: var(--paragraphColor);
 }
 .information .social-media .media-icons a::before {
   content: "";
@@ -375,20 +389,20 @@ section .img-detials .ele-price-quantity .accept {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1px solid var(--color-icon);
+  border: 1px solid var(--paragraphColor);
 }
 .information .social-media .media-icons a:hover i {
-  color: white;
+  color: var(--hover-color);
 }
 
 .information .social-media .media-icons a:hover::before {
-  border: 2px solid white;
+  border: 2px solid var(--hover-color);
   background-color: var(--color-icon);
 }
 
 .information .about-us .contact-paragraph {
   margin: 0px;
-  color: var(--color-text);
+  color: var(--paragraphColor);
   text-align: center;
   font-size: 15px;
 }
@@ -396,7 +410,7 @@ section .img-detials .ele-price-quantity .accept {
 .information .contact .email a {
   position: relative;
   font-size: 15px;
-  color: var(--color-text);
+  color: var(--paragraphColor);
 }
 
 footer {
@@ -426,7 +440,7 @@ footer .footer-content .cont-title .media-title {
   align-items: center;
   width: fit-content;
   position: relative;
-  color: var(--background-color);
+  color: var(--color-text);
 }
 
 footer .footer-content .cont-title .media-title::before {
@@ -466,12 +480,12 @@ footer .footer-content .all-list .list-content {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: var(--nav-color);
+  color: var(--paragraphColor);
   font-size: 16px;
   transition: 0.4s;
 }
 footer .footer-content .all-list li:hover .list-content {
-  color: white;
+  color: var(--hover-color);
   transition: 0.3s;
 }
 
@@ -524,14 +538,14 @@ footer .footer-content .all-list li:hover .list-content {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    border: 1px solid var(--color-icon);
+    border: 1px solid var(--paragraphColor);
   }
   .information .social-media .media-icons a:hover i {
-    color: white;
+    color: var(--hover-color);
   }
 
   .information .social-media .media-icons a:hover::before {
-    border: 2px solid white;
+    border: 2px solid var(--hover-color);
     background-color: var(--color-icon);
   }
   .information .about-us {
@@ -562,4 +576,7 @@ footer .footer-content .all-list li:hover .list-content {
     font-size: 15px;
     color: var(--color-text);
   }
+}
+.qty{
+  width: 50px;
 }

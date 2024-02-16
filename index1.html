@@ -21,10 +21,24 @@
         <div class="top-nav">
           <h1 class="logo">
             <a href="#"><i class="fa-solid fa-home"></i></a>
+            <form action="#" method="get">
+              <i style="display: none;"
+                id="search-icon"
+                class=" fa-solid fa-magnifying-glass"
+              ></i>
+              <input
+                type="search"
+                onkeyup="search()"
+                placeholder="search..."
+                class="search"
+              />
+              <i class="fa-solid fa-caret-down"></i>
+            </form>
+            <div class="object"></div>
           </h1>
           <ul class="nav">
             <nav class="menu">
-              <a class="menu-links" href="#">صفحة رئيسية</a>
+              <a class="menu-links" href="index.html">صفحة رئيسية</a>
               <a class="menu-links" href="راحة.html">راحة</a>
               <a class="menu-links" href="بسكوت.html">بسكوت</a>
               <a class="menu-links" href="شوكولا.html">شوكولا</a>
@@ -37,6 +51,7 @@
         </div>
       </div>
     </header>
+
     <section>
       <div class="change-pagees">
         <p class="main">main</p>
@@ -56,13 +71,35 @@
           </ul>
         </div>
         <div class="img-detials">
-          <div class="product-title">
-            <div id="ele-title"></div>
+        <div class="product-title">
+            <div class="content-title">
+              <div>اسم:</div>
+              <div id="ele-title"></div>
+            </div>
             <div id="ele-price"></div>
           </div>
+          <div class="product-paragraph">
+            <div>الوصف:</div>
+            <div class="ele-paragraph">
+
+            </div>
+          </div>
           <div class="ele-price-quantity">
-            <div class="quantity">:الكمية</div>
-            <div class="price">:السعر</div>
+            <div class="quantity"><div class="title-quantity" >
+              :الكمية
+            </div>
+              <form id='myform' method='POST' class='quantity' action='#'>
+                <input type='button' value='-' class='qtyminus minus' field='quantity' />
+                <input type='text' name='quantity' value='1'  class='qty' />
+                <input type='button' value='+' class='qtyplus plus' field='quantity' />
+              </form>
+            </div>
+            <div class="content-price">
+
+              <div>:السعر</div>
+              <div class="price">
+            </div>
+            </div>
             <button class="accept">اطلب</button>
           </div>
         </div>
@@ -123,6 +160,7 @@
       </div>
     </footer>
 
+    <script src="index.js"></script>
     <script src="index1.js"></script>
   </body>
 </html>

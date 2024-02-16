@@ -1,13 +1,4 @@
 // Function to toggle the sidebar and change menu icon
-
-  let counterOfcontent = 0;
-  let idOfproduct;
-  document.querySelectorAll(".content").forEach((element) => {
-    console.log(element.childNodes[3].innerHTML);
-    element.id = `${
-      element.parentNode.parentElement.childNodes[1].childNodes[3].innerHTML
-    }-${element.childNodes[3].innerHTML}-${counterOfcontent++}`;
-  });
   function toggleSidebar() {
     const bar = document.querySelector("#menu-bar");
     const nav = document.querySelector(".nav");
@@ -70,36 +61,6 @@ margin-bottom: 10px;
       }
     });
   }
-  // Fetch and display products
-  document.addEventListener("DOMContentLoaded", () => {
-  fetchProducts();
-});
-
-async function fetchProducts() {
-  try {
-    const response = await fetch("/api/products");
-    const products = await response.json();
-    displayProducts(products);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-  }
-}
-
-function displayProducts(products) {
-  const productList = document.querySelector(".product-list");
-  productList.innerHTML = "";
-  products.forEach((product) => {
-    const productItem = document.createElement("div");
-    productItem.classList.add("product-item");
-    productItem.innerHTML = `
-      <img src="${product.imageUrl}" alt="${product.name}">
-      <h3>${product.name}</h3>
-      <p>${product.description}</p>
-      <p>${product.price}</p>
-    `;
-    productList.appendChild(productItem);
-  });
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Event listener for toggling sidebar
@@ -157,9 +118,11 @@ document.addEventListener("click", (e) => {
     const ele1 = target.childNodes[1].src;
     const ele2 = target.childNodes[3].innerHTML;
     const ele3 = target.childNodes[5].innerHTML;
+    const ele4 = target.childNodes[7].innerHTML;
     localStorage.setItem("ele1", ele1);
     localStorage.setItem("ele2", ele2);
     localStorage.setItem("ele3", ele3);
+    localStorage.setItem("ele4", ele4);
     console.log(e.target.id);
     location.href = `index1.html?name=product-${
       e.target.classList.contains("content")
