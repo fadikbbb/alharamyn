@@ -115,10 +115,11 @@ document.addEventListener("click", (e) => {
     const target = e.target.classList.contains("content")
       ? e.target
       : e.target.parentNode;
-    const ele1 = target.childNodes[1].src;
-    const ele2 = target.childNodes[3].innerHTML;
-    const ele3 = target.childNodes[5].innerHTML;
-    const ele4 = target.childNodes[7].innerHTML;
+      const ele1 = target.childNodes[1].src;
+      const ele2 = target.childNodes[3].innerHTML;
+      const ele3 = target.childNodes[5].innerHTML;
+      const ele4 = target.childNodes[7].innerHTML;
+      localStorage.clear()
     localStorage.setItem("ele1", ele1);
     localStorage.setItem("ele2", ele2);
     localStorage.setItem("ele3", ele3);
