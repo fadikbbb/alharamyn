@@ -12,11 +12,10 @@
   --color-icon: #a86500; /* Black */
   --color-text: #7c4a00; /* Dark gray */
   --paragraphColor: #b15000; /* Dark gray */
-  --background-color: #F4F1EB; /* Light gray */
+  --background-color: #f4f1eb; /* Light gray */
   --nav-color: #222365; /* Navy blue */
   --hover-color: #ff7300; /* Light gray */
 }
-
 
 body {
   background-color: var(--background-color);
@@ -45,7 +44,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../image/الحرامين.png);
+  /* background-image: url(../image/الحرامين.png); */
   background-color: var(--head-color);
   background-position: center -30px;
   background-size: 200px;
@@ -97,7 +96,6 @@ form {
 }
 .search {
   padding-left: 10px;
-  padding-bottom: 11px;
   left: -1px;
   top: 40px;
   width: 242px;
@@ -121,7 +119,8 @@ form .fa-caret-down {
 .object {
   position: absolute;
   left: 43.8px;
-  top: 88px;
+  top: 84px;
+  z-index: -1;
   width: 240px;
   overflow: scroll;
   max-height: 170px;
@@ -143,11 +142,7 @@ form .fa-caret-down {
   justify-content: space-around;
   height: 100vh;
   transition: 0.2s linear;
-  background: radial-gradient(
-    circle,
-    #fcfcff 0%,
-   var(--background-color )
-  );
+  background: radial-gradient(circle, #fcfcff 0%, var(--background-color));
   backdrop-filter: blur(12px);
   padding: 0;
 }
@@ -240,7 +235,7 @@ section {
   justify-content: center;
   align-items: center;
   width: 200px;
-  margin: 10px 10px 0 ;
+  margin: 10px 10px 0;
 
   transition: 0.3s linear;
 }
@@ -261,7 +256,10 @@ section {
 .accept {
   background-color: var(--background-color);
   color: var(--color-text);
-  padding: 0px 20px 10px;
+  /* padding: 0px 20px 10px; */
+  text-align: center;
+  width: 70px;
+  height: 30px;
   border: none;
   font-size: 20px;
   border-radius: 20px;
@@ -348,14 +346,12 @@ section {
   display: flex;
   flex-direction: row;
   align-items: center;
- 
 }
 .information .social-media .media-icons a {
   width: 30px;
   height: 30px;
   padding: 5px;
   position: relative;
-  
 }
 .information .social-media .media-icons a i {
   transition: 0.3s linear;
@@ -376,7 +372,7 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 1px solid var(--paragraphColor);;
+  border: 1px solid var(--paragraphColor);
 }
 .information .social-media .media-icons a:hover i {
   color: var(--hover-color);
@@ -564,6 +560,6 @@ footer .footer-content .all-list li:hover .list-content {
     color: var(--color-text);
   }
 }
-.content-c{
+.content-c {
   margin-bottom: 10px;
 }

@@ -45,7 +45,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../image/الحرامين.png);
+  /* background-image: url(../image/الحرامين.png); */
   background-color: var(--head-color);
   background-position: center -30px;
   background-size: 200px;
@@ -97,7 +97,6 @@ form {
 }
 .search {
   padding-left: 10px;
-  padding-bottom: 11px;
   left: -1px;
   top: 40px;
   width: 242px;
@@ -121,7 +120,8 @@ form .fa-caret-down {
 .object {
   position: absolute;
   left: 43.8px;
-  top: 88px;
+  top: 84px;
+  z-index: -1;
   width: 240px;
   overflow: scroll;
   max-height: 170px;
@@ -263,7 +263,10 @@ section {
 .accept {
   background-color: var(--background-color);
   color: var(--color-text);
-  padding: 0px 20px 10px;
+  /* padding: 0px 20px 10px; */
+  text-align: center;
+  width: 70px;
+  height: 30px;
   border: none;
   font-size: 20px;
   border-radius: 20px;

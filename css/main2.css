@@ -48,7 +48,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../image/الحرامين.png);
+  /* background-image: url(../image/الحرامين.png); */
   background-color: var(--head-color);
   background-position: center -30px;
   background-size: 200px;
@@ -101,7 +101,6 @@ form {
 }
 .search {
   padding-left: 10px;
-  padding-bottom: 11px;
   left: -1px;
   top: 40px;
   width: 242px;
@@ -611,8 +610,12 @@ footer .footer-content .all-list li:hover .list-content {
 }
 section .img-detials .ele-price-quantity .accept {
 width: 50%;
+
 margin: auto;
 }
 .qty {
   width: 50px;
+}
+#ele-title,.ele-paragraph,form,.price{
+  margin-top: 20px;
 }
