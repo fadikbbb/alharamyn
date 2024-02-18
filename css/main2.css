@@ -619,3 +619,21 @@ margin: auto;
 #ele-title,.ele-paragraph,form,.price{
   margin-top: 20px;
 }
+#myform{
+  display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+
+}
+.qtyminus ,.qty,.qtyplus {
+  padding: 0;
+  margin-left: 10px;
+  width: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
