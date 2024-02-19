@@ -76,6 +76,9 @@ header {
 .icons:hover,.search-form .icons:hover + i{
   color: var(--hover-color);
 }
+span{
+  transition: 0.3s linear;
+}
 .search-form {
   margin: 0;
   position: relative;
@@ -211,7 +214,7 @@ section {
   justify-content: center;
   align-items: center;
   width: 200px;
-  margin: 10px 10px 0;
+  margin: 10px;
 
   transition: 0.3s linear;
 }
