@@ -20,3 +20,6 @@ body{
   flex-wrap: nowrap;
   overflow-x: scroll;
 }
+.cho::-webkit-scrollbar{
+  display: none;
+}

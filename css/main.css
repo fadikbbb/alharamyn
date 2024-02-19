@@ -1,5 +1,5 @@
 * {
-  font-family: "Katibeh", serif;
+  font-family:Arial, Helvetica, sans-serif;
   list-style: none;
   color: rgb(0, 0, 0);
 }
@@ -73,12 +73,16 @@ header {
   z-index: 4;
   margin: 0;
 }
-.icons:hover {
+.icons:hover,.search-form .icons:hover + i{
   color: var(--hover-color);
 }
-form {
+.search-form {
   margin: 0;
   position: relative;
+  width: 242px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 .search {
   padding-left: 10px;
@@ -96,16 +100,17 @@ form {
 form .fa-caret-down {
   display: none;
   content: "";
-  position: absolute;
+position: absolute;
   top: 22px;
-  right: 9px;
+  left: 10px;
   font-size: 25px;
+  color: var(--color-icon);
 }
 
 .object {
   position: absolute;
-  left: 43.8px;
-  top: 84px;
+  left: 0;
+  top: 65px;
   z-index: -1;
   width: 240px;
   overflow: scroll;
@@ -144,14 +149,7 @@ header .menu {
   flex-direction: column;
   justify-content: space-around;
 }
-@media screen and (max-width: 300px) {
-  .space {
-    background-image: none;
-  }
-  .active {
-    width: 180px;
-  }
-}
+
 .menu .menu-links {
   text-wrap: nowrap;
   text-decoration: none;

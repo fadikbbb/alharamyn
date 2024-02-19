@@ -1,53 +1,52 @@
 // Function to toggle the sidebar and change menu icon
-  function toggleSidebar() {
-    const bar = document.querySelector("#menu-bar");
-    const nav = document.querySelector(".nav");
-    nav.classList.toggle("active");
-    // console.log(bar.innerHTML.trim()=="menu")
-    if(bar.innerHTML.trim()=="menu"){
-      bar.innerHTML="close"
-    }
-    else{
-      bar.innerHTML="menu"
+function toggleSidebar() {
+  const bar = document.querySelector("#menu-bar");
+  const nav = document.querySelector(".nav");
+  nav.classList.toggle("active");
 
-    }
+  // console.log(bar.innerHTML.trim()=="menu")
+  if (bar.innerHTML.trim() == "menu") {
+    bar.innerHTML = "close";
+  } else {
+    bar.innerHTML = "menu";
   }
-  // Function to handle sending WhatsApp message
-  function sendWhatsAppMessage(target) {
-    const name = target.parentNode.childNodes[3].innerHTML;
-    const price = target.parentNode.childNodes[5].innerHTML;
-    const image = encodeURIComponent(target.parentNode.childNodes[1].src);
-    const num = "+96176795291";
-    const message = `image: ${image}%0Aprice: ${price}%0Aname: ${name}`;
-    window.location.href = `https://wa.me/${num}?text=${message}`;
-  }
+}
+// Function to handle sending WhatsApp message
+function sendWhatsAppMessage(target) {
+  const name = target.parentNode.childNodes[3].innerHTML;
+  const price = target.parentNode.childNodes[5].innerHTML;
+  const image = encodeURIComponent(target.parentNode.childNodes[1].src);
+  const num = "+96176795291";
+  const message = `image: ${image}%0Aprice: ${price}%0Aname: ${name}`;
+  window.location.href = `https://wa.me/${num}?text=${message}`;
+}
 
-  // Function to handle search functionality
-  function search() {
-    const searchInput = document.querySelector(".search");
-    const nameContents = document.querySelectorAll(".title-content");
-    const obj = document.querySelector(".object");
-    const val1 = searchInput.value.toUpperCase();
-    obj.innerHTML = "";
-    nameContents.forEach((nameContent, i) => {
-      const content = nameContent.parentNode;
-      const contentClone = content.cloneNode(true);
-      //styles to cloned content
-      contentClone.childNodes[1].style.cssText = `
+// Function to handle search functionality
+function search() {
+  const searchInput = document.querySelector(".search");
+  const nameContents = document.querySelectorAll(".title-content");
+  const obj = document.querySelector(".object");
+  const val1 = searchInput.value.toUpperCase();
+  obj.innerHTML = "";
+  nameContents.forEach((nameContent, i) => {
+    const content = nameContent.parentNode;
+    const contentClone = content.cloneNode(true);
+    //styles to cloned content
+    contentClone.childNodes[1].style.cssText = `
  width:30px;
  height:30px;`;
-      contentClone.childNodes[3].style.cssText = `
+    contentClone.childNodes[3].style.cssText = `
  font-size: 10px`;
-      contentClone.childNodes[5].style.cssText = `
+    contentClone.childNodes[5].style.cssText = `
  display: flex;
  font-size: 10px;
  flex-direction: column;
  `;
-      contentClone.childNodes[7].style.cssText = `
+    contentClone.childNodes[7].style.cssText = `
  display: none`;
-      contentClone.childNodes[9].style.cssText = `
+    contentClone.childNodes[9].style.cssText = `
  display: none`;
-      contentClone.style.cssText = `
+    contentClone.style.cssText = `
  display:flex;
  flex-direction: row;
  justify-content: space-between;
@@ -59,13 +58,13 @@ margin-bottom: 10px;
 
 `;
 
-      if (nameContent.innerHTML.toUpperCase().includes(val1)) {
-        obj.appendChild(contentClone);
-      } else {
-        contentClone.style.display = "none";
-      }
-    });
-  }
+    if (nameContent.innerHTML.toUpperCase().includes(val1)) {
+      obj.appendChild(contentClone);
+    } else {
+      contentClone.style.display = "none";
+    }
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Event listener for toggling sidebar
@@ -78,10 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Event listener for search icon
-  document.querySelector("#search-icon").addEventListener("click", () => {
-    const searchInput = document.querySelector(".search");
-    const searchSign = document.querySelector(".fa-caret-down");
-    const obj = document.querySelector(".object");
+  const searchInput = document.querySelector(".search");
+  const searchSign = document.querySelector(".fa-caret-down");
+  const obj = document.querySelector(".object");
+  const iconSearch = document.querySelector("#search-icon");
+  iconSearch.addEventListener("click", () => {
     searchInput.classList.toggle("research");
     searchInput.style.display = searchInput.classList.contains("research")
       ? "flex"
@@ -89,8 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.style.display = searchInput.classList.contains("research")
       ? "flex"
       : "none";
-    searchSign.style.display = searchInput.classList.contains("research")
-      ? "flex"
+    searchSign.style.cssText = searchInput.classList.contains("research")
+      ? `display:flex;
+      color:#ff7300;`
       : "none";
     obj.style.display = searchInput.classList.contains("research")
       ? "flex"
@@ -101,8 +102,19 @@ document.addEventListener("DOMContentLoaded", () => {
     obj.style.flexDirection = searchInput.classList.contains("research")
       ? "column"
       : "";
+    iconSearch.style.cssText = searchInput.classList.contains("research")
+      ? `color:#ff7300`
+      : "";
   });
-
+  document.addEventListener("click", (e) => {
+    if (e.target.classList[0] != "notclick") {
+      searchInput.style.display = "none";
+      iconSearch.style.cssText = `color:#a86500;`;
+      searchInput.classList.toggle("research");
+      searchSign.style.display = "none";
+      obj.style.display = "none";
+    }
+  });
   // Event listener for searching
   document.querySelector(".search").addEventListener("input", search);
 });
@@ -120,11 +132,11 @@ document.addEventListener("click", (e) => {
     const target = e.target.classList.contains("content")
       ? e.target
       : e.target.parentNode;
-      const ele1 = target.childNodes[1].src;
-      const ele2 = target.childNodes[3].innerHTML;
-      const ele3 = target.childNodes[5].innerHTML;
-      const ele4 = target.childNodes[7].innerHTML;
-      localStorage.clear()
+    const ele1 = target.childNodes[1].src;
+    const ele2 = target.childNodes[3].innerHTML;
+    const ele3 = target.childNodes[5].innerHTML;
+    const ele4 = target.childNodes[7].innerHTML;
+    localStorage.clear();
     localStorage.setItem("ele1", ele1);
     localStorage.setItem("ele2", ele2);
     localStorage.setItem("ele3", ele3);
