@@ -3,10 +3,15 @@
     const bar = document.querySelector("#menu-bar");
     const nav = document.querySelector(".nav");
     nav.classList.toggle("active");
-    bar.classList.toggle("fa-bars");
-    bar.classList.toggle("fa-x");
+    // console.log(bar.innerHTML.trim()=="menu")
+    if(bar.innerHTML.trim()=="menu"){
+      bar.innerHTML="close"
+    }
+    else{
+      bar.innerHTML="menu"
+
+    }
   }
-  
   // Function to handle sending WhatsApp message
   function sendWhatsAppMessage(target) {
     const name = target.parentNode.childNodes[3].innerHTML;
