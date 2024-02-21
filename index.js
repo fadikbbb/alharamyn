@@ -15,7 +15,7 @@ function toggleSidebar() {
 function sendWhatsAppMessage(target) {
   const name = target.parentNode.childNodes[3].innerHTML;
   const price = target.parentNode.childNodes[5].innerHTML;
-  const image = encodeURIComponent(target.parentNode.childNodes[1].src);
+  const image = encodeURIComponent(target.parentNode.childNodes[1].childNodes[1].src);
   const num = "+96176795291";
   const message = `image: ${image}%0Aprice: ${price}%0Aname: ${name}`;
   window.location.href = `https://wa.me/${num}?text=${message}`;
@@ -27,38 +27,23 @@ function search() {
   const nameContents = document.querySelectorAll(".title-content");
   const obj = document.querySelector(".object");
   const val1 = searchInput.value.toUpperCase();
+
+  const regularSearch = new RegExp(val1, 'ig');
   obj.innerHTML = "";
+
   nameContents.forEach((nameContent, i) => {
     const content = nameContent.parentNode;
     const contentClone = content.cloneNode(true);
-    //styles to cloned content
-    contentClone.childNodes[1].style.cssText = `
- width:30px;
- height:30px;`;
-    contentClone.childNodes[3].style.cssText = `
- font-size: 10px`;
-    contentClone.childNodes[5].style.cssText = `
- display: flex;
- font-size: 10px;
- flex-direction: column;
- `;
-    contentClone.childNodes[7].style.cssText = `
- display: none`;
-    contentClone.childNodes[9].style.cssText = `
- display: none`;
-    contentClone.style.cssText = `
- display:flex;
- flex-direction: row;
- justify-content: space-between;
-background-color: gold;
-margin-left: 10px;
-margin-right: 10px;
-margin-top: 0px;
-margin-bottom: 10px;
+    
+    // Apply styles to cloned content
+    contentClone.childNodes[1].style.cssText = `width:30px; height:30px;`;
+    contentClone.childNodes[3].style.fontSize = "10px";
+    contentClone.childNodes[5].style.cssText = `display: flex; font-size: 10px; flex-direction: column;`;
+    contentClone.childNodes[7].style.display = "none";
+    contentClone.childNodes[9].style.display = "none";
+    contentClone.style.cssText = `display:flex; flex-direction: row; justify-content: space-between; background-color: gold; margin-left: 10px; margin-right: 10px; margin-top: 0px; margin-bottom: 10px;`;
 
-`;
-
-    if (nameContent.innerHTML.toUpperCase().includes(val1)) {
+    if (regularSearch.test(nameContent.innerHTML.toUpperCase())) {
       obj.appendChild(contentClone);
     } else {
       contentClone.style.display = "none";
@@ -107,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
       : "";
   });
   document.addEventListener("click", (e) => {
-    if (e.target.classList[0] != "notclick") {
+    console.log(!(e.target.classList.contains("notclick")))
+    if (!(e.target.classList.contains("notclick"))) {
       searchInput.style.display = "none";
       iconSearch.style.cssText = `color:#a86500;`;
       searchInput.classList.toggle("research");
@@ -120,6 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Event delegation for clicking on product items
+
 document.addEventListener("click", (e) => {
   const targetClasses = [
     "image-content",
@@ -127,12 +114,16 @@ document.addEventListener("click", (e) => {
     "content",
     "title-content",
     "price",
+    "container-img",
   ];
+
   if (targetClasses.some((cls) => e.target.classList.contains(cls))) {
-    const target = e.target.classList.contains("content")
-      ? e.target
-      : e.target.parentNode;
-    const ele1 = target.childNodes[1].src;
+    const target= e.target.classList.contains("content")
+    ? e.target
+    : e.target.classList.contains("image-content")
+    ? e.target.parentNode.parentNode
+    : e.target.parentNode;
+    const ele1 = target.childNodes[1].childNodes[1].src;
     const ele2 = target.childNodes[3].innerHTML;
     const ele3 = target.childNodes[5].innerHTML;
     const ele4 = target.childNodes[7].innerHTML;
@@ -144,8 +135,8 @@ document.addEventListener("click", (e) => {
     console.log(e.target.id);
     location.href = `index1.html?name=product-${
       e.target.classList.contains("content")
-        ? e.target.id
-        : e.target.parentNode.id
+      ? e.target.id
+      : e.target.parentNode.id
     }`;
   }
 });

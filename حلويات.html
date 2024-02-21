@@ -1,116 +1,89 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
   <head>
+    <title>dnello</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/main2.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-   
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&family=Katibeh&display=swap"
       rel="stylesheet"
     />
-    <link class="linkOfIcon" rel="icon" href="">
   </head>
   <body>
     <header>
       <div class="space">
         <div class="top-nav">
           <h1 class="logo">
-            <a href="#">
-              <!-- <i class="fa-solid fa-home"></i> -->
-              <span class="notclick icons material-symbols-outlined">
-                home
-                </span>
-            </a>
-            <form action="#" method="get">
-              <span id="search-icon" style="display: none;" class="icons material-symbols-outlined">
+            <a href="index.js">
+              <span class="icons material-symbols-outlined"> home </span></a
+            >
+            <form class="search-form" action="#" method="get">
+              <span
+                id="search-icon"
+                class="notclick icons material-symbols-outlined"
+              >
                 search
-                </span>
+              </span>
+              <i class="notclick fa-solid fa-caret-down"></i>
               <input
                 type="search"
                 onkeyup="search()"
                 placeholder="search..."
-                class="search"
+                class="notclick search"
               />
-              <i class="fa-solid fa-caret-down"></i>
+              <div class="notclick object"></div>
             </form>
-            <div class="object"></div>
           </h1>
           <ul class="nav">
             <nav class="menu">
               <a class="menu-links" href="index.html">صفحة رئيسية</a>
               <a class="menu-links" href="راحة.html">راحة</a>
-              <a class="menu-links" href="بسكوت.html">بسكوت</a>
+              <a class="menu-links" href="#">بسكوت</a>
               <a class="menu-links" href="شوكولا.html">شوكولا</a>
               <a class="menu-links" href="مكسرات.html">مكسرات</a>
               <a class="menu-links" href="بزورات.html">بزورات</a>
               <a class="menu-links" href="منتجات_دنيلو.html">منتجات دنيلو</a>
             </nav>
           </ul>
-            <span id="menu-bar"  class="notclick icons material-symbols-outlined">
+          <span id="menu-bar" class="icons material-symbols-outlined">
             menu
-            </span>
+          </span>
         </div>
       </div>
     </header>
 
     <section>
-      <div class="change-pagees">
-        <p class="main">main</p>
-        <p class="secondary">secondary</p>
-        <p class="product-page">product-page</p>
-      </div>
-      <div class="product">
-        <div class="img">
-          <div class="image-container">
-            <img id="ele-img" />
-          </div>
-          <ul class="share-every-where">
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          </ul>
+      <div class="change-page">
+        <div class="titleOfList offer-title">
+          <a href="index.html">صفحة رئيسية></a>بسكوت
         </div>
-        <div class="img-detials">
-        <div class="product-title">
-            <div class="content-title">
-              <div>اسم:</div>
-              <div id="ele-title"></div>
-            </div>
-            <div id="ele-price"></div>
-          </div>
-          <div class="product-paragraph">
-            <div>الوصف:</div>
-            <div class="ele-paragraph">
-
-            </div>
-          </div>
-          <div class="ele-price-quantity">
-            <div class="quantity"><div class="title-quantity" >
-              :الكمية
-            </div>
-              <form id='myform' method='POST' class='quantity' action='#'>
-                <input type='button' value='-' class='qtyminus minus' field='quantity' />
-                <input type='text' name='quantity' value='1'  class='qty' />
-                <input type='button' value='+' class='qtyplus plus' field='quantity' />
-              </form>
-            </div>
-            <div class="content-price">
-
-              <div>:السعر</div>
-              <div class="price">
-            </div>
-            </div>
-            <button class="accept">اطلب</button>
-          </div>
+      </div>
+      <div class="cho">
+        <div class="content">
+          <img
+            class="image-content"
+            src="image/شوكولا/FB_IMG_1678111163632.jpg"
+            alt=""
+          />
+          <h1 class="title-content">fadi</h1>
+          <div class="price">30$/ليرة4500000</div>
+          <p class="paragraph-content">
+            Loremdolor sit amet consectetur adipisicing elit.
+          </p>
+          <button class="accept">اطلب</button>
         </div>
       </div>
     </section>
@@ -130,9 +103,7 @@
       <ul class="contact">
         <p class="media-title">مراجعاتك</p>
         <div class="email">
-          <a href="mailto:fadikbb2004@gmail.com"><span class="icons material-symbols-outlined">
-            support_agent
-            </span></a>
+          <a href="mailto:fadikbb2004@gmail.com">gmail</a>
         </div>
       </ul>
       <ul class="about-us">
@@ -156,7 +127,7 @@
             <a class="list-content" href="بزورات.html">بزورات</a>
           </li>
           <li>
-            <a class="list-content" href="بسكوت.html">بسكوت</a>
+            <a class="list-content" href="#">بسكوت</a>
           </li>
           <li>
             <a class="list-content" href="شوكولا.html">شوكولا</a>
@@ -170,8 +141,6 @@
         </ul>
       </div>
     </footer>
-
     <script src="index.js"></script>
-    <script src="index1.js"></script>
   </body>
 </html>
