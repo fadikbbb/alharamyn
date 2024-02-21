@@ -1,132 +1,151 @@
-//whatsapp and side bar
-let bar = document.querySelector("#menu-bar");
-let nav = document.querySelector(".nav");
-let menu = document.querySelector(".menu");
-let accept = document.querySelectorAll(".accept");
-let all = document.querySelectorAll("section");
-let linksOfNav = document.querySelectorAll(".menu a");
-bar.onclick = function () {
+// Function to toggle the sidebar and change menu icon
+function toggleSidebar() {
+  const bar = document.querySelector("#menu-bar");
+  const nav = document.querySelector(".nav");
   nav.classList.toggle("active");
 
-  if (nav.classList.contains("active")) {
-    bar.classList.replace("fa-bars", "fa-x");
+  // console.log(bar.innerHTML.trim()=="menu")
+  if (bar.innerHTML.trim() == "menu") {
+    bar.innerHTML = "close";
   } else {
-    bar.classList.replace("fa-x", "fa-bars");
-  }
-};
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("accept")) {
-    let name = e.target.parentNode.childNodes[3];
-    let price = e.target.parentNode.childNodes[5];
-    let image = e.target.parentNode.childNodes[1];
-    let num = "+96176795291";
-    const message = `image: ${encodeURIComponent(image.src)}%0Aprice: ${
-      price.innerHTML
-    }%0Aname: ${name.innerHTML}`;
-    window.location.href = `https://wa.me/${num}?text=${message}`;
-  }
-});
-//search
-let val1;
-let searchIcon = document.querySelector("#search-icon");
-let searchInput = document.querySelector(".search");
-let content = document.querySelectorAll(".content");
-let nameContents = document.querySelectorAll(".title-content");
-let obj = document.querySelector(".object");
-let searchSign = document.querySelector(".fa-caret-down");
-let contentClone;
-searchInput.addEventListener("input", function () {
-  val1 = searchInput.value.toUpperCase();
-});
-function search() {
-  obj.innerHTML = "";
-  for (let i = 0; i < nameContents.length; i++) {
-    contentClone = content[i].cloneNode(true);
-    contentClone.childNodes[1].style.cssText = `width:30px;
-                                                height:30px;`;
-    contentClone.childNodes[3].style.cssText = `font-size: 10px`;
-    contentClone.childNodes[5].style.cssText = `display: flex;
-                                                font-size: 10px;
-                                                flex-direction: column;
-                                                `;
-    contentClone.childNodes[7].style.cssText = `display: none`;
-    contentClone.childNodes[9].style.cssText = `display: none`;
-    contentClone.style.cssText = `display:flex;
-                                  flex-direction: row;
-                                  justify-content: space-between;
-                                  background-color: gold;
-                                  margin-left: 10px;
-                                  margin-right: 10px;
-                                  margin-top: 0px;
-                                  `;
-
-    if (nameContents[i].innerHTML.toUpperCase().indexOf(val1) >= 0) {
-      obj.append(contentClone);
-    } else {
-      contentClone.style.cssText = `display: none;`;
-    }
+    bar.innerHTML = "menu";
   }
 }
+// Function to handle sending WhatsApp message
+function sendWhatsAppMessage(target) {
+  const name = target.parentNode.childNodes[3].innerHTML;
+  const price = target.parentNode.childNodes[5].innerHTML;
+  const image = encodeURIComponent(target.parentNode.childNodes[1].src);
+  const num = "+96176795291";
+  const message = `image: ${image}%0Aprice: ${price}%0Aname: ${name}`;
+  window.location.href = `https://wa.me/${num}?text=${message}`;
+}
 
-searchIcon.addEventListener("click", function () {
-  if (this.classList.contains("research")) {
-    searchInput.style.cssText = `
-    display:flex;
-    `;
-    searchSign.style.cssText = `
-    display: block;`;
-    obj.style.cssText = `
-    display: flex;
-    flex-direction:column;
-    gap: 10px;
-    height: 170px;
-    text-align: center;
-     outline: 1px solid black;`;
-    this.classList.remove("research");
-  } else {
-    searchSign.style.cssText = `
-    display: none;`;
-    searchInput.style.cssText = `
-    display:none;`;
-    obj.style.cssText = `
-    display:none;`;
-    obj.style.cssText = `
-    height: 0px;`;
-    this.classList.add("research");
-  }
-});
-document.addEventListener("click", function (e) {
-  if (
-    e.target.classList.contains("image-content") ||
-    e.target.classList.contains("paragraph-content") ||
-    e.target.classList.contains("content") ||
-    e.target.classList.contains("title-content") ||
-    e.target.classList.contains("price")
-  ) {
-    let ele1 = document.createElement("img");
-    ele1.className = "ele-img";
-    let ele2 = document.createElement("div");
-    ele2.className = "ele-title";
-    let ele3 = document.createElement("div");
-    ele3.className = "ele-price";
-    let  targetName;
+// Function to handle search functionality
+function search() {
+  const searchInput = document.querySelector(".search");
+  const nameContents = document.querySelectorAll(".title-content");
+  const obj = document.querySelector(".object");
+  const val1 = searchInput.value.toUpperCase();
+  obj.innerHTML = "";
+  nameContents.forEach((nameContent, i) => {
+    const content = nameContent.parentNode;
+    const contentClone = content.cloneNode(true);
+    //styles to cloned content
+    contentClone.childNodes[1].style.cssText = `
+ width:30px;
+ height:30px;`;
+    contentClone.childNodes[3].style.cssText = `
+ font-size: 10px`;
+    contentClone.childNodes[5].style.cssText = `
+ display: flex;
+ font-size: 10px;
+ flex-direction: column;
+ `;
+    contentClone.childNodes[7].style.cssText = `
+ display: none`;
+    contentClone.childNodes[9].style.cssText = `
+ display: none`;
+    contentClone.style.cssText = `
+ display:flex;
+ flex-direction: row;
+ justify-content: space-between;
+background-color: gold;
+margin-left: 10px;
+margin-right: 10px;
+margin-top: 0px;
+margin-bottom: 10px;
 
-    if (e.target.classList.contains("content")) {
-      console.log(e.target.childNodes);
-      ele1.src = e.target.childNodes[1].src;
-      ele2.innerHTML = e.target.childNodes[3].innerHTML;
-      ele3.innerHTML = e.target.childNodes[5].innerHTML;
-      targetName = e.target.childNodes[3].innerHTML;
+`;
+
+    if (nameContent.innerHTML.toUpperCase().includes(val1)) {
+      obj.appendChild(contentClone);
     } else {
-      ele1.src = e.target.parentNode.childNodes[1].src;
-      ele2.innerHTML = e.target.parentNode.childNodes[3].innerHTML;
-      ele3.innerHTML = e.target.parentNode.childNodes[5].innerHTML;
-      targetName = e.target.parentNode.childNodes[3].innerHTML;
+      contentClone.style.display = "none";
     }
-    location.href = `index1.html?name=product-${targetName}`;
-    localStorage.setItem("ele1", ele1.src);
-    localStorage.setItem("ele2", ele2.innerHTML);
-    localStorage.setItem("ele3", ele3.innerHTML);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Event listener for toggling sidebar
+  document.querySelector("#menu-bar").addEventListener("click", toggleSidebar);
+  // Event listener for accepting in WhatsApp
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("accept")) {
+      sendWhatsAppMessage(e.target);
+    }
+  });
+
+  // Event listener for search icon
+  const searchInput = document.querySelector(".search");
+  const searchSign = document.querySelector(".fa-caret-down");
+  const obj = document.querySelector(".object");
+  const iconSearch = document.querySelector("#search-icon");
+  iconSearch.addEventListener("click", () => {
+    searchInput.classList.toggle("research");
+    searchInput.style.display = searchInput.classList.contains("research")
+      ? "flex"
+      : "none";
+    searchInput.style.display = searchInput.classList.contains("research")
+      ? "flex"
+      : "none";
+    searchSign.style.cssText = searchInput.classList.contains("research")
+      ? `display:flex;
+      color:#ff7300;`
+      : "none";
+    obj.style.display = searchInput.classList.contains("research")
+      ? "flex"
+      : "none";
+    obj.style.height = searchInput.classList.contains("research")
+      ? "170px"
+      : "0px";
+    obj.style.flexDirection = searchInput.classList.contains("research")
+      ? "column"
+      : "";
+    iconSearch.style.cssText = searchInput.classList.contains("research")
+      ? `color:#ff7300`
+      : "";
+  });
+  document.addEventListener("click", (e) => {
+    if (e.target.classList[0] != "notclick") {
+      searchInput.style.display = "none";
+      iconSearch.style.cssText = `color:#a86500;`;
+      searchInput.classList.toggle("research");
+      searchSign.style.display = "none";
+      obj.style.display = "none";
+    }
+  });
+  // Event listener for searching
+  document.querySelector(".search").addEventListener("input", search);
+});
+
+// Event delegation for clicking on product items
+document.addEventListener("click", (e) => {
+  const targetClasses = [
+    "image-content",
+    "paragraph-content",
+    "content",
+    "title-content",
+    "price",
+  ];
+  if (targetClasses.some((cls) => e.target.classList.contains(cls))) {
+    const target = e.target.classList.contains("content")
+      ? e.target
+      : e.target.parentNode;
+    const ele1 = target.childNodes[1].src;
+    const ele2 = target.childNodes[3].innerHTML;
+    const ele3 = target.childNodes[5].innerHTML;
+    const ele4 = target.childNodes[7].innerHTML;
+    localStorage.clear();
+    localStorage.setItem("ele1", ele1);
+    localStorage.setItem("ele2", ele2);
+    localStorage.setItem("ele3", ele3);
+    localStorage.setItem("ele4", ele4);
+    console.log(e.target.id);
+    location.href = `index1.html?name=product-${
+      e.target.classList.contains("content")
+        ? e.target.id
+        : e.target.parentNode.id
+    }`;
   }
 });
-// localStorage.clear()
