@@ -118,7 +118,7 @@ position: absolute;
   width: 240px;
   overflow: scroll;
   max-height: 170px;
-  background-color: var(--nav-color);
+  background-color: transparent;
 }
 
 .object::-webkit-scrollbar {

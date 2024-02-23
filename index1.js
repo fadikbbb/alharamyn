@@ -10,43 +10,48 @@ if (localStorage.getItem("ele1")) {
   let button = document.querySelector(".accept");
   let copyPrice = 0;
   let sum = 0;
-  if (localStorage.getItem("sum")) {
-    document.querySelector(".price").innerHTML = localStorage.getItem("sum");
-  }
+
   if (copyPrice <= 0) {
     copyPrice = price;
   }
   let input = document.querySelector(".qty");
   let minc = document.querySelector(".qtyminus");
   let plus = document.querySelector(".qtyplus");
-  input.addEventListener("click", function (e) {
-    e.preventDefault();
-  });
+  if (localStorage.getItem("sum")) {
+    document.querySelector(".price").innerHTML = localStorage.getItem("sum");
+    input.value = localStorage.getItem("pAndm");
+  }
+  input.addEventListener("click", function (e) {});
+
+  let priceOfDollar = 15_000;
   minc.addEventListener("click", function (e) {
-    e.preventDefault();
     input.value > 1
       ? (input.value -= 1) &&
         (document.querySelector(".price").innerHTML = `${
-          (sum =
+          (sum = (
             parseFloat(document.querySelector(".price").innerHTML) -
-            parseFloat(copyPrice)) + "$"
+            parseFloat(copyPrice)
+          ).toFixed(2)) + "$"
         } `)
       : input.value;
     localStorage.setItem("sum", sum);
+    localStorage.setItem("pAndm", input.value);
+
     console.log(sum);
   });
 
   plus.addEventListener("click", function (e) {
-    e.preventDefault();
     input.value < 1000
       ? (input.value = parseFloat(input.value) + 1)
       : input.value;
-    sum = document.querySelector(".price").innerHTML = `${
+    sum = document.querySelector(".price").innerHTML = `${(
       parseFloat(price) * input.value
-    }$`;
+    ).toFixed(2)}$`;
     console.log(sum);
     localStorage.setItem("sum", sum);
+    localStorage.setItem("pAndm", input.value);
   });
+
   button.onclick = function () {
     let num = "+96176795291";
     let link = (document.querySelector(".linkOfIcon").href = image);

@@ -216,16 +216,15 @@ section .product .img {
 section .product .img .image-container {
   border-radius: 20px;
   padding: 10px;
-  background: rgb(158,158,158);
-  background: radial-gradient(circle, rgba(158,158,158,1) 0%, rgba(255,255,255,1) 0%, rgba(142,142,142,1) 78%);
-
+background-color: wwwwhite;
   background-color: var(--head-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 275px;
-  height: 450px;
+  min-width: 220px;
+  max-width: 275px;
+  height: fit-content;
   margin: 20px 10px 0px;
 }
 

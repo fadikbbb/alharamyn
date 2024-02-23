@@ -3,8 +3,6 @@ function toggleSidebar() {
   const bar = document.querySelector("#menu-bar");
   const nav = document.querySelector(".nav");
   nav.classList.toggle("active");
-
-  // console.log(bar.innerHTML.trim()=="menu")
   if (bar.innerHTML.trim() == "menu") {
     bar.innerHTML = "close";
   } else {
@@ -15,42 +13,36 @@ function toggleSidebar() {
 function sendWhatsAppMessage(target) {
   const name = target.parentNode.childNodes[3].innerHTML;
   const price = target.parentNode.childNodes[5].innerHTML;
-  const image = encodeURIComponent(target.parentNode.childNodes[1].childNodes[1].src);
+  const image = encodeURIComponent(
+    target.parentNode.childNodes[1].childNodes[1].src
+  );
   const num = "+96176795291";
   const message = `image: ${image}%0Aprice: ${price}%0Aname: ${name}`;
   window.location.href = `https://wa.me/${num}?text=${message}`;
 }
-
 // Function to handle search functionality
-function search() {
-  const searchInput = document.querySelector(".search");
-  const nameContents = document.querySelectorAll(".title-content");
-  const obj = document.querySelector(".object");
+const searchInput = document.querySelector(".search");
+const nameContents = document.querySelectorAll(".title-content");
+const obj = document.querySelector(".object");
+document.querySelector(".search").addEventListener("input", function search() {
   const val1 = searchInput.value.toUpperCase();
-
-  const regularSearch = new RegExp(val1, 'ig');
   obj.innerHTML = "";
-
   nameContents.forEach((nameContent, i) => {
     const content = nameContent.parentNode;
     const contentClone = content.cloneNode(true);
-    
-    // Apply styles to cloned content
     contentClone.childNodes[1].style.cssText = `width:30px; height:30px;`;
-    contentClone.childNodes[3].style.fontSize = "10px";
-    contentClone.childNodes[5].style.cssText = `display: flex; font-size: 10px; flex-direction: column;`;
+    contentClone.childNodes[3].style.cssText =`font-Size: 20px; margin:0; color:#a86500;`;
+    contentClone.childNodes[5].style.cssText = `display: flex; font-size: 10px; color:#a86500; margin:0px 21px 0px 0px; flex-direction: column;`;
     contentClone.childNodes[7].style.display = "none";
     contentClone.childNodes[9].style.display = "none";
-    contentClone.style.cssText = `display:flex; flex-direction: row; justify-content: space-between; background-color: gold; margin-left: 10px; margin-right: 10px; margin-top: 0px; margin-bottom: 10px;`;
-
-    if (regularSearch.test(nameContent.innerHTML.toUpperCase())) {
+    contentClone.style.cssText = `display:flex; flex-direction: row;algin-item:cnter;width:100%; justify-content: space-between;border-radius:0; background-color: rgb(251 208 142); margin:0; `;
+    if (nameContent.innerHTML.toUpperCase().includes(val1)) {
       obj.appendChild(contentClone);
     } else {
       contentClone.style.display = "none";
     }
   });
-}
-
+});
 document.addEventListener("DOMContentLoaded", () => {
   // Event listener for toggling sidebar
   document.querySelector("#menu-bar").addEventListener("click", toggleSidebar);
@@ -92,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       : "";
   });
   document.addEventListener("click", (e) => {
-    console.log(!(e.target.classList.contains("notclick")))
-    if (!(e.target.classList.contains("notclick"))) {
+    if (!e.target.classList.contains("notclick")) {
       searchInput.style.display = "none";
       iconSearch.style.cssText = `color:#a86500;`;
       searchInput.classList.toggle("research");
@@ -101,8 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
       obj.style.display = "none";
     }
   });
-  // Event listener for searching
-  document.querySelector(".search").addEventListener("input", search);
 });
 
 // Event delegation for clicking on product items
@@ -118,11 +107,11 @@ document.addEventListener("click", (e) => {
   ];
 
   if (targetClasses.some((cls) => e.target.classList.contains(cls))) {
-    const target= e.target.classList.contains("content")
-    ? e.target
-    : e.target.classList.contains("image-content")
-    ? e.target.parentNode.parentNode
-    : e.target.parentNode;
+    const target = e.target.classList.contains("content")
+      ? e.target
+      : e.target.classList.contains("image-content")
+      ? e.target.parentNode.parentNode
+      : e.target.parentNode;
     const ele1 = target.childNodes[1].childNodes[1].src;
     const ele2 = target.childNodes[3].innerHTML;
     const ele3 = target.childNodes[5].innerHTML;
@@ -135,8 +124,8 @@ document.addEventListener("click", (e) => {
     console.log(e.target.id);
     location.href = `index1.html?name=product-${
       e.target.classList.contains("content")
-      ? e.target.id
-      : e.target.parentNode.id
+        ? e.target.id
+        : e.target.parentNode.id
     }`;
   }
 });
