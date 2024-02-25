@@ -1,16 +1,19 @@
-body{
+body {
 }
-.change-page{
+.change-page {
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
 }
-.titleOfList, .offer-title,.change-page a{
+.titleOfList,
+.offer-title,
+.change-page a {
   text-decoration: none;
   margin-right: 10px;
   padding: 10px 0px 10px 0px;
   font-size: 30px;
   color: var(--color-text);
 }
+
 .cho {
   width: 100%;
   display: flex;
@@ -20,6 +23,6 @@ body{
   flex-wrap: nowrap;
   overflow-x: scroll;
 }
-.cho::-webkit-scrollbar{
+.cho::-webkit-scrollbar {
   display: none;
 }

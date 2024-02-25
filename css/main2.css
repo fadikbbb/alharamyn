@@ -70,14 +70,15 @@ header {
   flex-direction: row;
   align-items: center;
 }
-.icons{
+.icons {
   margin-left: 10px;
   font-size: 40px !important;
   color: var(--color-icon);
   z-index: 4;
   margin: 0;
 }
-.icons:hover,.search-form .icons:hover + i{
+.icons:hover,
+.search-form .icons:hover + i {
   color: var(--hover-color);
 }
 form {
@@ -122,10 +123,12 @@ form .fa-caret-down {
 .object::-webkit-scrollbar {
   display: none;
 }
-#ele-title,.ele-paragraph,.price{
+#ele-title,
+.ele-paragraph,
+.price {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
-  font-size:25px ;
+  font-size: 25px;
 }
 .nav {
   width: 0;
@@ -216,7 +219,7 @@ section .product .img {
 section .product .img .image-container {
   border-radius: 20px;
   padding: 10px;
-background-color: wwwwhite;
+  background-color: wwwwhite;
   background-color: var(--head-color);
   display: flex;
   flex-direction: column;
@@ -271,6 +274,19 @@ section .img-detials .ele-price-quantity {
   justify-content: space-between;
   width: 100%;
   height: 50%;
+}
+section .ele-price-quantity .quantity .qtyminus,
+section .ele-price-quantity .quantity .qtyplus {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.price-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
 }
 section .img-detials .ele-price-quantity .accept {
   border-radius: 10px;
@@ -569,51 +585,53 @@ footer .footer-content .all-list li:hover .list-content {
   }
 
   section .product {
-    
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     position: relative;
   }
-  .img{
-
+  .img {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
   }
- section .img-detials{
+  section .img-detials {
     width: 100%;
     margin: 20px 20px;
   }
-  .product-paragraph{
+  .product-paragraph {
     width: 100%;
   }
-  .ele-paragraph{
+  .ele-paragraph {
     width: 90%;
     font-size: 20px;
-    text-align:start;
+    text-align: start;
   }
 }
 section .img-detials .ele-price-quantity .accept {
-width: 50%;
+  width: 50%;
 
-margin: auto;
+  margin: auto;
 }
 .qty {
   width: 50px;
 }
-#ele-title,.ele-paragraph,form,.price{
+#ele-title,
+.ele-paragraph,
+form,
+.price {
   margin-top: 20px;
 }
-#myform{
+#myform {
   display: flex;
-    width: 100%;
-    height: 50px;
-    align-items: center;
-
+  width: 100%;
+  height: 50px;
+  align-items: center;
 }
-.qtyminus ,.qty,.qtyplus {
+.qtyminus,
+.qty,
+.qtyplus {
   padding: 0;
   margin-left: 10px;
   width: 40px;

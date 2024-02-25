@@ -21,8 +21,32 @@ if (localStorage.getItem("ele1")) {
     document.querySelector(".price").innerHTML = localStorage.getItem("sum");
     input.value = localStorage.getItem("pAndm");
   }
-  input.addEventListener("click", function (e) {});
 
+  // Get the currency selector element
+  let currencySelector = document.getElementById("currencySelector");
+
+  // Add event listener for the change event
+  currencySelector.addEventListener("change", function () {
+    // Function to update price based on selected currency
+    function updatePrice() {
+      let exchangeRate = 15000; // Sample exchange rate
+      let selectedCurrency = currencySelector.value;
+
+      // Update price based on selected currency
+      if (selectedCurrency === "USD") {
+        console.log("USD");
+        price = price;
+      } else if (selectedCurrency === "SYP") {
+        console.log("SYP");
+        price = price * exchangeRate;
+      }
+    }
+
+    // Call the updatePrice function when currency is changed
+    updatePrice();
+  });
+
+  input.addEventListener("click", function (e) {});
   let priceOfDollar = 15_000;
   minc.addEventListener("click", function (e) {
     input.value > 1
