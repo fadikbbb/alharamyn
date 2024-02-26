@@ -31,7 +31,7 @@ document.querySelector(".search").addEventListener("input", function search() {
     const content = nameContent.parentNode;
     const contentClone = content.cloneNode(true);
     contentClone.childNodes[1].style.cssText = `width:30px; height:30px;`;
-    contentClone.childNodes[3].style.cssText = `font-Size: 20px; margin:0; color:#a86500;`;
+    contentClone.childNodes[3].style.cssText = `font-Size: 20px; margin:0;text-align: center;color:#a86500;`;
     contentClone.childNodes[5].style.cssText = `display: flex; font-size: 10px; color:#a86500; margin:0px 21px 0px 0px; flex-direction: column;`;
     contentClone.childNodes[7].style.display = "none";
     contentClone.childNodes[9].style.display = "none";

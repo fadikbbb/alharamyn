@@ -4,7 +4,16 @@
   color: rgb(0, 0, 0);
 }
 :root {
+  --productPriceColor: #0b0b0b; /* Dark gray */
+  --productParagraphColor: #395f68; /* Gray */
+  --productTitleColor: #010101; /* Navy blue */
+  --head-color: #ffffff; /* Navy blue */
+  --color-icon: #a86500; /* Black */
+  --color-text: #7c4a00; /* Dark gray */
+  --paragraphColor: #b15000; /* Dark gray */
+  --background-color: #f4f1eb; /* Light gray */
   --nav-color: #222365; /* Navy blue */
+  --hover-color: #ff7300; /* Light gray */
 }
 
 body {
@@ -152,10 +161,17 @@ section .ele-price-quantity .quantity .qtyplus {
   align-items: center;
   gap: 20px;
 }
+.price-container p{
+  margin: 20px 0;
+}
 section .img-detials .ele-price-quantity .accept {
   border-radius: 10px;
-  width: 90%;
-  margin: 20px;
+  font-size:30px;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  height: fit-content;
+  background-color: var(--head-color);
 }
 @media screen and (max-width: 480px) {
   section .product {
@@ -163,6 +179,7 @@ section .img-detials .ele-price-quantity .accept {
     flex-direction: column;
     align-items: flex-end;
     position: relative;
+  
   }
   .img {
     left: 50%;
@@ -183,17 +200,12 @@ section .img-detials .ele-price-quantity .accept {
     text-align: start;
   }
 }
-section .img-detials .ele-price-quantity .accept {
-  width: 50%;
-  margin: auto;
-}
 .qty {
   width: 50px;
 }
 #ele-title,
 .ele-paragraph,
-form,
-.price {
+form{
   margin-top: 20px;
 }
 #myform {
