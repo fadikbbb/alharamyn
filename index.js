@@ -116,11 +116,15 @@ document.addEventListener("click", (e) => {
     const ele2 = target.childNodes[3].innerHTML;
     const ele3 = target.childNodes[5].innerHTML;
     const ele4 = target.childNodes[7].innerHTML;
+    console.log(target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML)
+    const ele5 = target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML;
     localStorage.clear();
     localStorage.setItem("ele1", ele1);
     localStorage.setItem("ele2", ele2);
     localStorage.setItem("ele3", ele3);
     localStorage.setItem("ele4", ele4);
+    localStorage.setItem("ele5", ele5);
+
     console.log(e.target.id);
     location.href = `index1.html?name=product-${
       e.target.classList.contains("content")

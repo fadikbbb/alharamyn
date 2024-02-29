@@ -70,11 +70,11 @@
     </header>
 
     <section>
-      <div class="change-pagees">
-        <p class="main">main</p>
-        <p class="secondary">secondary</p>
-        <p class="product-page">product-page</p>
-      </div>
+      <nav class="change-pagees">
+        <a href="index.html" class="main">صفحة رئيسية</a>
+        <a href="#" onclick="link()" class="secondary">secondary</a>
+        <a href="#" class="product-page">product-page</a>
+      </nav>
       <div class="product">
         <div class="img">
           <div class="image-container">
@@ -101,7 +101,7 @@
           </div>
           <div class="ele-price-quantity">
             <div class="quantity">
-              <div class="title-quantity">:الكمية</div>
+              <div class="title-quantity">الكمية:</div>
               <form id="myform" method="POST" class="quantity" action="#">
                 <input type="button" value="-" class="qtyminus minus" />
                 <input type="text" name="quantity" value="1" class="qty" />

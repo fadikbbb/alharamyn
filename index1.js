@@ -1,19 +1,25 @@
-let image, name1, price, paragraph, sum, copyPrice, button;
+let image, name1, price, paragraph, sum, copyPrice, button, parent;
 let input = document.querySelector(".qty");
 let minc = document.querySelector(".qtyminus");
 let plus = document.querySelector(".qtyplus");
 if (localStorage.getItem("ele1")) {
   image = document.getElementById("ele-img").src = localStorage.getItem("ele1");
-  name1 = document.getElementById("ele-title").innerHTML =
-    localStorage.getItem("ele2");
+  name1 =
+    document.getElementById("ele-title").innerHTML =
+    document.querySelector(".product-page").innerHTML =
+      localStorage.getItem("ele2");
   price = document.querySelector(".price").innerHTML =
     localStorage.getItem("ele3");
   paragraph = document.querySelector(".ele-paragraph").innerHTML =
     localStorage.getItem("ele4");
+  parent = document.querySelector(".secondary").innerHTML =
+    localStorage.getItem("ele5");
   button = document.querySelector(".accept");
   sum = 0;
 }
-
+function link() {
+  location.href = `${parent}.html`;
+}
 if (localStorage.getItem("sum")) {
   document.querySelector(".price").innerHTML = localStorage.getItem("sum");
   input.value = localStorage.getItem("pAndm");
@@ -42,7 +48,7 @@ currencySelector.addEventListener("change", function () {
   updatePrice();
 });
 plus.addEventListener("click", function () {
-  if (input.value < 10) {
+  if (input.value < 1000) {
     (input.value = parseInt(input.value || 1) + 1) &&
       (ElementPrice.innerHTML = `${(
         parseFloat(copyPrice) * input.value
@@ -57,7 +63,11 @@ minc.addEventListener("click", function () {
       ).toFixed(2)} ${currencyS}`);
   }
 });
-
+input.oninput = () => {
+  ElementPrice.innerHTML = `${(parseFloat(copyPrice) * input.value).toFixed(
+    2
+  )} ${currencyS}`;
+};
 document.querySelector("#search-icon").remove();
 button.onclick = function () {
   let num = "+96176795291";

@@ -1,7 +1,7 @@
 * {
-  font-family: "Katibeh", serif;
+
   list-style: none;
-  color: rgb(0, 0, 0);
+  color: var(--color-text);
 }
 :root {
   --productPriceColor: #0b0b0b; /* Dark gray */
@@ -68,7 +68,8 @@ section .change-pagees {
   height: 50px;
 }
 
-section .change-pagees p {
+section .change-pagees a {
+  text-decoration: none;
   margin: 10px;
   font-size: 24px;
 }
@@ -141,7 +142,6 @@ section .img-detials .product-title {
   direction: rtl;
 }
 section .img-detials .ele-price-quantity {
-  direction: rtl;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -152,8 +152,15 @@ section .ele-price-quantity .quantity .qtyminus,
 section .ele-price-quantity .quantity .qtyplus {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
+  font-size: 30px;
+  background-color: var(--head-color);
+  border-width: 1px;
+}
+select{
+  border: none;
+  background-color: var(--background-color);
 }
 .price-container {
   display: flex;
@@ -200,13 +207,12 @@ section .img-detials .ele-price-quantity .accept {
     text-align: start;
   }
 }
-.qty {
-  width: 50px;
-}
+
+
 #ele-title,
 .ele-paragraph,
 form{
-  margin-top: 20px;
+  margin:10px;
 }
 #myform {
   display: flex;
@@ -219,7 +225,8 @@ form{
 .qtyplus {
   padding: 0;
   margin-left: 10px;
-  width: 40px;
+  min-width: 40px;
+  max-width: 100px;
   text-align: center;
   display: flex;
   flex-direction: column;
