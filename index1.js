@@ -64,16 +64,20 @@ minc.addEventListener("click", function () {
   }
 });
 input.oninput = () => {
-  ElementPrice.innerHTML = `${(parseFloat(copyPrice) * input.value).toFixed(
-    2
-  )} ${currencyS}`;
+  if (this.value > 1) {
+    ElementPrice.innerHTML = `${(parseFloat(copyPrice) * input.value).toFixed(
+      2
+    )} ${currencyS}`;
+  } else {
+    ElementPrice.innerHTML = copyPrice;
+  }
 };
 document.querySelector("#search-icon").remove();
 button.onclick = function () {
   let num = "+96176795291";
   let link = (document.querySelector(".linkOfIcon").href = image);
   const message = `${encodeURIComponent(link)}%0Aname: ${name1}%0Aprice: ${
-    ElementPrice.innerHTML || price
+    ElementPrice.innerHTML == 0 ? copyPrice : ElementPrice.innerHTML
   }%0Aquantity: ${input.value || "1"}%0Adescription:${paragraph}`;
   window.location.href = `https://wa.me/${num}?text=${message}`;
 };

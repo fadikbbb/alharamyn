@@ -116,8 +116,11 @@ document.addEventListener("click", (e) => {
     const ele2 = target.childNodes[3].innerHTML;
     const ele3 = target.childNodes[5].innerHTML;
     const ele4 = target.childNodes[7].innerHTML;
-    console.log(target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML)
-    const ele5 = target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML;
+    console.log(
+      target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML
+    );
+    const ele5 =
+      target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML;
     localStorage.clear();
     localStorage.setItem("ele1", ele1);
     localStorage.setItem("ele2", ele2);
