@@ -20,10 +20,6 @@ if (localStorage.getItem("ele1")) {
 function link() {
   location.href = `${parent}.html`;
 }
-if (localStorage.getItem("sum")) {
-  document.querySelector(".price").innerHTML = localStorage.getItem("sum");
-  input.value = localStorage.getItem("pAndm");
-}
 let ElementPrice = document.querySelector(".price");
 let currencySelector = document.getElementById("currencySelector");
 let currencyS = "SYP";
@@ -64,7 +60,7 @@ minc.addEventListener("click", function () {
   }
 });
 input.oninput = () => {
-  if (this.value > 1) {
+  if (parseInt(input.value) > 1) {
     ElementPrice.innerHTML = `${(parseFloat(copyPrice) * input.value).toFixed(
       2
     )} ${currencyS}`;
@@ -81,4 +77,3 @@ button.onclick = function () {
   }%0Aquantity: ${input.value || "1"}%0Adescription:${paragraph}`;
   window.location.href = `https://wa.me/${num}?text=${message}`;
 };
-// localStorage.clear()
