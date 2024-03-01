@@ -43,6 +43,7 @@ currencySelector.addEventListener("change", function () {
   }
   updatePrice();
 });
+
 plus.addEventListener("click", function () {
   if (input.value < 1000) {
     (input.value = parseInt(input.value || 1) + 1) &&

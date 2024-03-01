@@ -9,6 +9,61 @@ function toggleSidebar() {
     bar.innerHTML = "menu";
   }
 }
+//transtion between cards
+function listT(section) {
+  let counter = 0;
+  let countProduct = document.querySelector(`${section} .countProduct`);
+  let left = document.querySelector(`${section} .fa-arrow-left`);
+  let right = document.querySelector(`${section} .fa-arrow-right`);
+  let offer = document.querySelectorAll(`${section} .cho .content`);
+  document.querySelector(`${section} .nbOfProduct`).innerHTML = offer.length;
+
+  right.onclick = function () {
+    if (counter < offer.length - 1) {
+      counter++;
+      countProduct.innerHTML = counter + 1;
+      offer[counter].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+      updateOfferStyles();
+    }
+  };
+  left.onclick = function () {
+    if (counter > 0) {
+      counter--;
+      countProduct.innerHTML = counter + 1;
+      offer[counter].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+      updateOfferStyles();
+    }
+  };
+  function updateOfferStyles() {
+    offer.forEach((element, index) => {
+      if (index === counter) {
+        element.style.transform = "scale(1.2)";
+      } else {
+        element.style.transform = "scale(1)";
+      }
+    });
+  }
+}
+let typeOfProduct = [
+  ".offer",
+  ".raha",
+  ".choclate",
+  ".candy",
+  ".Nuts",
+  ".mawalih",
+  ".Crisps",
+];
+typeOfProduct.forEach((e) => {
+  listT(e);
+});
 // Function to handle sending WhatsApp message
 function sendWhatsAppMessage(target) {
   const name = target.parentNode.childNodes[3].innerHTML;
@@ -52,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
       sendWhatsAppMessage(e.target);
     }
   });
-
   // Event listener for search icon
   const searchInput = document.querySelector(".search");
   const searchSign = document.querySelector(".fa-caret-down");
@@ -83,19 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `color:#ff7300`
       : "";
   });
-  document.addEventListener("click", (e) => {
-    if (!e.target.classList.contains("notclick")) {
-      searchInput.style.display = "none";
-      iconSearch.style.cssText = `color:#a86500;`;
-      searchInput.classList.toggle("research");
-      searchSign.style.display = "none";
-      obj.style.display = "none";
-    }
-  });
 });
-
 // Event delegation for clicking on product items
-
 document.addEventListener("click", (e) => {
   const targetClasses = [
     "image-content",
@@ -105,7 +148,6 @@ document.addEventListener("click", (e) => {
     "price",
     "container-img",
   ];
-
   if (targetClasses.some((cls) => e.target.classList.contains(cls))) {
     const target = e.target.classList.contains("content")
       ? e.target
@@ -127,12 +169,6 @@ document.addEventListener("click", (e) => {
     localStorage.setItem("ele3", ele3);
     localStorage.setItem("ele4", ele4);
     localStorage.setItem("ele5", ele5);
-
-    console.log(e.target.id);
-    location.href = `index1.html?name=product-${
-      e.target.classList.contains("content")
-        ? e.target.id
-        : e.target.parentNode.id
-    }`;
+    location.href = `index1.html?name=product-${ele5}`;
   }
 });
