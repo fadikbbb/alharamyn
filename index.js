@@ -10,7 +10,7 @@ function toggleSidebar() {
   }
 }
 //transtion between cards
-if (document.querySelector("section").childNodes.length > 5) {
+try {
   function listT(section) {
     let left = document.querySelector(`${section} .arrow-left`);
     let right = document.querySelector(`${section} .arrow-right`);
@@ -51,19 +51,12 @@ if (document.querySelector("section").childNodes.length > 5) {
       });
     }
   }
-  let typeOfProduct = [
-    ".offer",
-    ".raha",
-    ".choclate",
-    ".candy",
-    ".Nuts",
-    ".mawalih",
-    ".Crisps",
-  ];
-  console.log();
+  let typeOfProduct = document.querySelectorAll("section");
   typeOfProduct.forEach((e) => {
-    listT(e);
+    listT(`.${e.classList[0]}`);
   });
+} catch (error) {
+  // console.log(error);
 }
 
 // Function to handle sending WhatsApp message
@@ -163,16 +156,37 @@ document.addEventListener("click", (e) => {
     const ele2 = target.children[1].innerHTML;
     const ele3 = target.children[2].innerHTML;
     const ele4 = target.children[3].innerHTML;
+    let ele5 ;
+    let check;
+    try {
+      ele5 = target.parentNode.parentNode.children[0].children[1].innerHTML;
+    } catch (error) {
+      document.querySelectorAll(".content").forEach((elem) => {
+        if (target.children[1] && elem.children[1]) {
+          // Check if children exist
+          check = target.children[1].innerHTML == elem.children[1].innerHTML;
+          if (check === true) {
+            if (
+              elem.parentNode &&
+              elem.parentNode.parentNode &&
+              elem.parentNode.parentNode.children[0] &&
+              elem.parentNode.parentNode.children[0].children[1]
+            ) {
+              ele5 =
+                elem.parentNode.parentNode.children[0].children[1].innerHTML;
+              return false;
+            }
+          }
+        }
+      });
+    }
     localStorage.clear();
     localStorage.setItem("ele1", ele1);
-    localStorage.setItem("ele2", ele2||"unknown");
+    localStorage.setItem("ele2", ele2 || "unknown");
     localStorage.setItem("ele3", ele3);
     localStorage.setItem("ele4", ele4);
-    try {
-      const ele5 =
-        target.parentNode.parentNode.children[0].children[1].innerHTML;
-      localStorage.setItem("ele5", ele5);
-    } catch (error) {}
-    location.href = `index1.html?name=product-${ele2}`;
+    localStorage.setItem("ele5", ele5 || "unknown");
+    console.log(ele5);
+    location.href = `index1.html?name=product-${ele5}`;
   }
 });
