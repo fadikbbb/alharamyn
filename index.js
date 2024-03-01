@@ -10,22 +10,23 @@ function toggleSidebar() {
   }
 }
 //transtion between cards
-function listT(section) {
-  let counter = 0;
-  let countProduct = document.querySelector(`${section} .countProduct`);
-  let left = document.querySelector(`${section} .fa-arrow-left`);
-  let right = document.querySelector(`${section} .fa-arrow-right`);
-  let offer = document.querySelectorAll(`${section} .cho .content`);
-
-  right.onclick = function () {
-    if (counter < offer.length - 1) {
-      counter++;
-      countProduct.innerHTML = counter + 1;
-      offer[counter].scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "center",
-      });
+if (document.querySelector("section").childNodes.length>5) {
+  
+  function listT(section) {
+    let left = document.querySelector(`${section} .fa-arrow-left`);
+    let right = document.querySelector(`${section} .fa-arrow-right`);
+    let counter = 0;
+    let countProduct = document.querySelector(`${section} .countProduct`);
+    let offer = document.querySelectorAll(`${section} .cho .content`);
+    right.onclick = function () {
+      if (counter < offer.length - 1) {
+        counter++;
+        countProduct.innerHTML = counter + 1;
+        offer[counter].scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
       updateOfferStyles();
     }
   };
@@ -60,9 +61,12 @@ let typeOfProduct = [
   ".mawalih",
   ".Crisps",
 ];
+console.log();
 typeOfProduct.forEach((e) => {
   listT(e);
 });
+}
+
 // Function to handle sending WhatsApp message
 function sendWhatsAppMessage(target) {
   const name = target.parentNode.childNodes[3].innerHTML;

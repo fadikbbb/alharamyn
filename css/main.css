@@ -3,7 +3,7 @@
   list-style: none;
   color: rgb(0, 0, 0);
 ::selection{
-  background-color: white;
+  background-color: transparent;
   color: var(--color-text);
 }
 }
@@ -11,8 +11,8 @@
 :root {
   --productPriceColor: #0b0b0b; /* Dark gray */
   --productParagraphColor: #395f68; /* Gray */
-  --productTitleColor: #010101; /* Navy blue */
-  --head-color: #ffffff; /* Navy blue */
+  --productT
+  : #ffffff; /* Navy blue */
   --color-icon: #a86500; /* Black */
   --color-text: #7c4a00; /* Dark gray */
   --paragraphColor: #b15000; /* Dark gray */
