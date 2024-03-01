@@ -2,10 +2,10 @@
   font-family: Arial, Helvetica, sans-serif;
   list-style: none;
   color: rgb(0, 0, 0);
-::selection{
-  background-color: transparent;
-  color: var(--color-text);
-}
+  ::selection {
+    background-color: transparent;
+    color: var(--color-text);
+  }
 }
 
 :root {
@@ -50,7 +50,7 @@ header {
   align-items: center;
   background-image: url(../image/Untitled\ design.png);
   background-color: var(--head-color);
-background-position:center -50px ;
+  background-position: center -50px;
   background-size: 400px;
   background-repeat: no-repeat;
   z-index: 5;
@@ -215,6 +215,9 @@ section {
 
   position: relative;
 }
+.cho::-webkit-scrollbar {
+  display: none;
+}
 .content {
   border-radius: 20px;
   padding: 10px;
@@ -251,19 +254,29 @@ section {
   color: var(--productParagrapghColor);
   font-size: 10px;
 }
-.transtion{
-  text-align: center;
-  font-size: 25px;
-  
+.transtion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
-span{
+span {
   color: var(--color-text);
 }
-.arrow-right,.arrow-left{
+.arrow-right,
+.arrow-left {
+  margin: 0px 10px;
+  padding: 5px;
   background-color: var(--head-color);
-  padding: 10px;
   border-radius: 50%;
   color: var(--color-icon);
+}
+.arrow-right:hover,
+span:hover,
+.arrow-left:hover {
+  color: var(--hover-color);
 }
 .accept {
   background-color: var(--background-color);
@@ -484,7 +497,6 @@ footer .footer-content .all-list li:hover .list-content {
 }
 
 @media screen and (max-width: 480px) {
-
   .information {
     display: flex;
     flex-direction: column;
@@ -530,6 +542,6 @@ footer .footer-content .all-list li:hover .list-content {
     width: 100%;
   }
 }
-.fa-solid::selection{
+.fa-solid::selection {
   background-color: #010101;
 }

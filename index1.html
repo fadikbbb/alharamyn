@@ -93,7 +93,6 @@
               <div>اسم:</div>
               <div id="ele-title"></div>
             </div>
-            <div id="ele-price"></div>
           </div>
           <div class="product-paragraph">
             <div>الوصف:</div>
@@ -102,9 +101,9 @@
           <div class="ele-price-quantity">
             <div class="quantity">
               <div class="title-quantity">الكمية:</div>
-              <form id="myform" method="POST" class="quantity" action="#">
+              <form id="myform" method="POST" class="quantity" >
                 <input type="button" value="-" class="qtyminus minus" />
-                <input type="text" name="quantity" value="1" class="qty" />
+                <input type="number" name="quantity" value="1" class="qty" />
                 <input type="button" value="+" class="qtyplus plus" />
               </form>
             </div>
@@ -118,7 +117,7 @@
                   </select>
                 </div>
               </div>
-              <div class="price" id="price"></div>
+              <div class="price-ele" id="price-ele"></div>
             </div>
             <button class="accept">اطلب</button>
           </div>

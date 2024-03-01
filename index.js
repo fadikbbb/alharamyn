@@ -10,8 +10,7 @@ function toggleSidebar() {
   }
 }
 //transtion between cards
-if (document.querySelector("section").childNodes.length>5) {
-  
+if (document.querySelector("section").childNodes.length > 5) {
   function listT(section) {
     let left = document.querySelector(`${section} .arrow-left`);
     let right = document.querySelector(`${section} .arrow-right`);
@@ -27,44 +26,44 @@ if (document.querySelector("section").childNodes.length>5) {
           block: "nearest",
           inline: "center",
         });
-      updateOfferStyles();
-    }
-  };
-  left.onclick = function () {
-    if (counter > 0) {
-      counter--;
-      countProduct.innerHTML = counter + 1;
-      offer[counter].scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-        inline: "center",
-      });
-      updateOfferStyles();
-    }
-  };
-  function updateOfferStyles() {
-    offer.forEach((element, index) => {
-      if (index === counter) {
-        element.style.transform = "scale(1.2)";
-      } else {
-        element.style.transform = "scale(1)";
+        updateOfferStyles();
       }
-    });
+    };
+    left.onclick = function () {
+      if (counter > 0) {
+        counter--;
+        countProduct.innerHTML = counter + 1;
+        offer[counter].scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+        updateOfferStyles();
+      }
+    };
+    function updateOfferStyles() {
+      offer.forEach((element, index) => {
+        if (index === counter) {
+          element.style.transform = "scale(1.2)";
+        } else {
+          element.style.transform = "scale(1)";
+        }
+      });
+    }
   }
-}
-let typeOfProduct = [
-  ".offer",
-  ".raha",
-  ".choclate",
-  ".candy",
-  ".Nuts",
-  ".mawalih",
-  ".Crisps",
-];
-console.log();
-typeOfProduct.forEach((e) => {
-  listT(e);
-});
+  let typeOfProduct = [
+    ".offer",
+    ".raha",
+    ".choclate",
+    ".candy",
+    ".Nuts",
+    ".mawalih",
+    ".Crisps",
+  ];
+  console.log();
+  typeOfProduct.forEach((e) => {
+    listT(e);
+  });
 }
 
 // Function to handle sending WhatsApp message
@@ -110,7 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
       sendWhatsAppMessage(e.target);
     }
   });
-  // Event listener for search icon
+});
+// Event listener for search icon
+try {
   const searchInput = document.querySelector(".search");
   const searchSign = document.querySelector(".fa-caret-down");
   const obj = document.querySelector(".object");
@@ -140,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ? `color:#ff7300`
       : "";
   });
-});
+} catch (error) {}
 // Event delegation for clicking on product items
 document.addEventListener("click", (e) => {
   const targetClasses = [
@@ -151,27 +152,27 @@ document.addEventListener("click", (e) => {
     "price",
     "container-img",
   ];
+
   if (targetClasses.some((cls) => e.target.classList.contains(cls))) {
     const target = e.target.classList.contains("content")
       ? e.target
       : e.target.classList.contains("image-content")
       ? e.target.parentNode.parentNode
       : e.target.parentNode;
-    const ele1 = target.childNodes[1].childNodes[1].src;
-    const ele2 = target.childNodes[3].innerHTML;
-    const ele3 = target.childNodes[5].innerHTML;
-    const ele4 = target.childNodes[7].innerHTML;
-    console.log(
-      target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML
-    );
-    const ele5 =
-      target.parentNode.parentNode.childNodes[1].childNodes[3].innerHTML;
+    const ele1 = target.children[0].children[0].src;
+    const ele2 = target.children[1].innerHTML;
+    const ele3 = target.children[2].innerHTML;
+    const ele4 = target.children[3].innerHTML;
     localStorage.clear();
     localStorage.setItem("ele1", ele1);
-    localStorage.setItem("ele2", ele2);
+    localStorage.setItem("ele2", ele2||"unknown");
     localStorage.setItem("ele3", ele3);
     localStorage.setItem("ele4", ele4);
-    localStorage.setItem("ele5", ele5);
-    location.href = `index1.html?name=product-${ele5}`;
+    try {
+      const ele5 =
+        target.parentNode.parentNode.children[0].children[1].innerHTML;
+      localStorage.setItem("ele5", ele5);
+    } catch (error) {}
+    location.href = `index1.html?name=product-${ele2}`;
   }
 });

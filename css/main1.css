@@ -1,9 +1,23 @@
-body {
+:root {
+  --productPriceColor: #0b0b0b; /* Dark gray */
+  --productParagraphColor: #395f68; /* Gray */
+  --productTitleColor: #010101; /* Navy blue */
+  --head-color: #ffffff; /* Navy blue */
+  --color-icon: #a86500; /* Black */
+  --color-text: #7c4a00; /* Dark gray */
+  --paragraphColor: #b15000; /* Dark gray */
+  --background-color: #f4f1eb; /* Light gray */
+  --nav-color: #222365; /* Navy blue */
+  --hover-color: #ff7300; /* Light gray */
 }
+
 .change-page {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  margin-top: 30px;
 }
+
 .titleOfList,
 .offer-title,
 .change-page a {
@@ -12,6 +26,8 @@ body {
   padding: 10px 0px 10px 0px;
   font-size: 30px;
   color: var(--color-text);
+  border-left: 1px solid var(--color-text);
+  padding: 0px 0px 0px 15px;
 }
 
 .cho {

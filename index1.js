@@ -8,7 +8,7 @@ if (localStorage.getItem("ele1")) {
     document.getElementById("ele-title").innerHTML =
     document.querySelector(".product-page").innerHTML =
       localStorage.getItem("ele2");
-  price = document.querySelector(".price").innerHTML =
+  price = document.querySelector(".price-ele").innerHTML =
     localStorage.getItem("ele3");
   paragraph = document.querySelector(".ele-paragraph").innerHTML =
     localStorage.getItem("ele4");
@@ -20,7 +20,7 @@ if (localStorage.getItem("ele1")) {
 function link() {
   location.href = `${parent}.html`;
 }
-let ElementPrice = document.querySelector(".price");
+let ElementPrice = document.querySelector(".price-ele");
 let currencySelector = document.getElementById("currencySelector");
 let currencyS = "SYP";
 copyPrice = price;
