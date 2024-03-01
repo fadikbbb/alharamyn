@@ -13,8 +13,8 @@ function toggleSidebar() {
 if (document.querySelector("section").childNodes.length>5) {
   
   function listT(section) {
-    let left = document.querySelector(`${section} .fa-arrow-left`);
-    let right = document.querySelector(`${section} .fa-arrow-right`);
+    let left = document.querySelector(`${section} .arrow-left`);
+    let right = document.querySelector(`${section} .arrow-right`);
     let counter = 0;
     let countProduct = document.querySelector(`${section} .countProduct`);
     let offer = document.querySelectorAll(`${section} .cho .content`);

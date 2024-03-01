@@ -11,8 +11,8 @@
 :root {
   --productPriceColor: #0b0b0b; /* Dark gray */
   --productParagraphColor: #395f68; /* Gray */
-  --productT
-  : #ffffff; /* Navy blue */
+  --productTitleColor: #010101; /* Navy blue */
+  --head-color: #ffffff; /* Navy blue */
   --color-icon: #a86500; /* Black */
   --color-text: #7c4a00; /* Dark gray */
   --paragraphColor: #b15000; /* Dark gray */
@@ -259,7 +259,7 @@ section {
 span{
   color: var(--color-text);
 }
-.fa-arrow-right,.fa-arrow-left{
+.arrow-right,.arrow-left{
   background-color: var(--head-color);
   padding: 10px;
   border-radius: 50%;
@@ -529,4 +529,7 @@ footer .footer-content .all-list li:hover .list-content {
     align-items: center;
     width: 100%;
   }
+}
+.fa-solid::selection{
+  background-color: #010101;
 }
