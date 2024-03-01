@@ -16,7 +16,6 @@ function listT(section) {
   let left = document.querySelector(`${section} .fa-arrow-left`);
   let right = document.querySelector(`${section} .fa-arrow-right`);
   let offer = document.querySelectorAll(`${section} .cho .content`);
-  document.querySelector(`${section} .nbOfProduct`).innerHTML = offer.length;
 
   right.onclick = function () {
     if (counter < offer.length - 1) {

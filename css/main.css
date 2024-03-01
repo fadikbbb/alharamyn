@@ -209,7 +209,8 @@ section {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: scroll;
   padding: 30px 0;
 
   position: relative;
